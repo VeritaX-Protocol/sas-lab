@@ -12,180 +12,8 @@
     Updating soroban-spec-rust v27.0.6 -> v29.0.1
     Updating soroban-wasmi v0.31.1-soroban.20.0.1 -> v0.31.1-soroban.29.0.0
     Updating stellar-xdr v27.0.0 -> v28.0.0 (available: v28.0.1)
-   Compiling proc-macro2 v1.0.107
-   Compiling unicode-ident v1.0.24
-   Compiling quote v1.0.47
-   Compiling version_check v0.9.5
-   Compiling cfg-if v1.0.4
-   Compiling serde_core v1.0.229
-   Compiling serde v1.0.229
-   Compiling zmij v1.0.23
-   Compiling typenum v1.20.1
-   Compiling serde_json v1.0.151
-   Compiling memchr v2.8.3
-   Compiling itoa v1.0.18
-   Compiling subtle v2.6.1
-   Compiling libc v0.2.189
-   Compiling const-oid v0.9.6
-   Compiling autocfg v1.5.1
-   Compiling strsim v0.11.1
-   Compiling ident_case v1.0.1
-   Compiling semver v1.0.28
-   Compiling generic-array v0.14.9
-   Compiling cpufeatures v0.2.17
-   Compiling zerocopy v0.8.56
-   Compiling schemars v0.8.22
-   Compiling radium v0.7.0
-   Compiling tap v1.0.1
-   Compiling num-traits v0.2.19
-   Compiling dyn-clone v1.0.20
-   Compiling wyz v0.5.1
-   Compiling paste v1.0.15
-   Compiling data-encoding v2.11.1
-   Compiling funty v2.0.0
-   Compiling rustc_version v0.4.1
-   Compiling syn v2.0.119
-   Compiling syn v3.0.4
-   Compiling escape-bytes v0.1.1
-   Compiling bitvec v1.1.1
-   Compiling getrandom v0.2.17
-   Compiling num-integer v0.1.47
-   Compiling ethnum v1.5.3
-   Compiling rand_core v0.6.4
-   Compiling ahash v0.8.12
-   Compiling num-bigint v0.4.8
-   Compiling block-buffer v0.10.4
-   Compiling crypto-common v0.1.6
-   Compiling either v1.18.0
-   Compiling hashbrown v0.17.1
-   Compiling digest v0.10.7
-   Compiling arrayvec v0.7.8
-   Compiling sha2 v0.10.9
-   Compiling base16ct v0.2.0
-   Compiling equivalent v1.0.2
-   Compiling itertools v0.13.0
-   Compiling libm v0.2.16
-   Compiling once_cell v1.21.4
-   Compiling indexmap v2.14.1
-   Compiling base64 v0.22.1
-   Compiling allocator-api2 v0.2.21
-   Compiling hybrid-array v0.4.14
-   Compiling hashbrown v0.15.5
-   Compiling thiserror v1.0.69
-   Compiling ff v0.13.1
-   Compiling wasmparser v0.116.1
-   Compiling group v0.13.0
-   Compiling curve25519-dalek v4.1.3
-   Compiling indexmap-nostd v0.4.0
-   Compiling downcast-rs v1.2.1
-   Compiling static_assertions v1.1.0
-   Compiling crypto-common v0.2.2
-   Compiling block-buffer v0.12.1
-   Compiling wasmparser-nostd v0.100.2
-   Compiling curve25519-dalek v5.0.0
-   Compiling wasmi_arena v0.4.1
-   Compiling spin v0.9.9
-   Compiling fnv v1.0.7
-   Compiling prettyplease v0.2.37
-   Compiling smallvec v1.15.2
-   Compiling serde_derive v1.0.229
-   Compiling enum-ordinalize-derive v4.4.2
-   Compiling soroban-env-host v29.0.1
-   Compiling heapless v0.8.0
-   Compiling byteorder v1.5.0
-   Compiling keccak v0.1.6
-   Compiling cpufeatures v0.3.1
-   Compiling dtor-proc-macro v0.0.6
-   Compiling ppv-lite86 v0.2.21
-   Compiling hash32 v0.3.1
-   Compiling hex-literal v0.4.1
-   Compiling wasmi_core v0.13.0
-   Compiling darling_core v0.23.0
-   Compiling enum-ordinalize v4.4.2
-   Compiling darling_core v0.20.11
-   Compiling stable_deref_trait v1.2.1
-   Compiling rand_chacha v0.3.1
-   Compiling rand v0.8.8
-   Compiling digest v0.11.3
-   Compiling macro-string v0.1.4
-   Compiling dtor v0.1.1
-   Compiling heck v0.5.0
-   Compiling ctor-proc-macro v0.0.6
-   Compiling shlex v2.0.1
-   Compiling find-msvc-tools v0.1.11
-   Compiling ctor v0.5.0
-   Compiling num_cpus v1.17.0
-   Compiling pairing v0.23.0
-   Compiling bls12_381 v0.8.0
-   Compiling cc v1.4.4
-   Compiling threadpool v1.8.1
-   Compiling ark-std v0.5.0
-   Compiling zeroize_derive v1.5.0
-   Compiling cfg_eval v0.1.2
-   Compiling ark-serialize-derive v0.5.0
-   Compiling ark-ff-asm v0.5.0
-   Compiling educe v0.6.0
-   Compiling ark-ff-macros v0.5.0
-   Compiling thiserror-impl v1.0.69
-   Compiling num-derive v0.4.2
-   Compiling zeroize v1.9.0
-   Compiling derive_arbitrary v1.3.2
-   Compiling der v0.7.10
-   Compiling crypto-bigint v0.5.5
-   Compiling curve25519-dalek-derive v0.1.1
-   Compiling arbitrary v1.3.2
-   Compiling soroban-wasmi v0.31.1-soroban.29.0.0
-   Compiling crate-git-revision v0.0.9
-   Compiling crate-git-revision v0.0.6
-   Compiling darling_macro v0.23.0
-   Compiling hex v0.4.3
-   Compiling stellar-xdr v28.0.0
-   Compiling stellar-strkey v0.0.13
-   Compiling sec1 v0.7.3
-   Compiling darling v0.23.0
-   Compiling serde_with_macros v3.22.0
-   Compiling signature v2.2.0
-   Compiling ark-serialize v0.5.0
-   Compiling hmac v0.12.1
-   Compiling rfc6979 v0.4.0
-   Compiling soroban-env-common v29.0.1
-   Compiling ed25519 v2.2.3
-   Compiling elliptic-curve v0.13.8
-   Compiling stellar-strkey v0.0.16
-   Compiling sha3 v0.10.9
-   Compiling darling_macro v0.20.11
-   Compiling ecdsa v0.16.9
-   Compiling primeorder v0.13.6
-   Compiling soroban-builtin-sdk-macros v29.0.1
-   Compiling darling v0.20.11
-   Compiling soroban-sdk v29.0.1
-   Compiling ark-ff v0.5.0
-   Compiling serde_with v3.22.0
-   Compiling p256 v0.13.2
-   Compiling k256 v0.13.4
-   Compiling ed25519-dalek v2.2.0
-   Compiling visibility v0.1.1
-   Compiling bytes-lit v0.0.6
-   Compiling blst v0.3.17
-   Compiling ark-poly v0.5.0
-   Compiling ark-ec v0.5.0
-   Compiling ark-bn254 v0.5.0
-   Compiling ark-bls12-381 v0.5.0
-   Compiling soroban-spec v29.0.1
-   Compiling soroban-spec-rust v29.0.1
-   Compiling soroban-env-macros v29.0.1
-   Compiling soroban-sdk-macros v29.0.1
-   Compiling soroban-ledger-snapshot v29.0.1
-   Compiling resolvers v2.0.0 (/tmp/tmp.pLSUbgsZ0D/wt/contracts/stellar/resolvers)
-   Compiling protocol v2.0.0 (/tmp/tmp.pLSUbgsZ0D/wt/contracts/stellar/protocol)
-warning: unused import: `Events`
- --> protocol/tests/protocol_initialization_and_schema.rs:5:31
-  |
-5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
-  |                               ^^^^^^
-  |
-  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
+   Compiling resolvers v2.0.0 (/tmp/tmp.xir6tYD6YZ/wt/contracts/stellar/resolvers)
+   Compiling protocol v2.0.0 (/tmp/tmp.xir6tYD6YZ/wt/contracts/stellar/protocol)
 warning: unused import: `Events`
  --> protocol/tests/protocol_revocation_test.rs:5:31
   |
@@ -195,12 +23,12 @@ warning: unused import: `Events`
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
 warning: unused import: `Events`
-  --> protocol/tests/protocol_cryptography_test.rs:51:31
-   |
-51 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
-   |                               ^^^^^^
-   |
-   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+ --> protocol/tests/protocol_initialization_and_schema.rs:5:31
+  |
+5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+  |                               ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
 warning: unused import: `errors::Error`
  --> protocol/tests/protocol_attestation_test.rs:3:5
@@ -215,6 +43,14 @@ warning: unused import: `Events`
    |
 14 |     testutils::{Address as _, Events, Ledger, LedgerInfo, MockAuth, MockAuthInvoke},
    |                               ^^^^^^
+
+warning: unused import: `Events`
+  --> protocol/tests/protocol_cryptography_test.rs:51:31
+   |
+51 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
 warning: unused import: `Events`
   --> protocol/tests/events_regression.rs:18:31
@@ -290,16 +126,16 @@ warning: unused variable: `subject`
 344 |     let subject = Address::generate(&env);
     |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
 
-warning: `protocol` (test "resolver_abi") generated 3 warnings (1 duplicate)
-warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (3 duplicates)
-warning: `protocol` (test "protocol_revocation_test") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_revocation_test" -p protocol` to apply 1 suggestion)
-warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "resolver_abi") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (1 duplicate)
+warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_revocation_test") generated 6 warnings (run `cargo fix --test "protocol_revocation_test" -p protocol` to apply 1 suggestion)
 warning: `protocol` (test "protocol_delegation_test") generated 3 warnings (3 duplicates)
 warning: `protocol` (test "events_regression") generated 6 warnings (5 duplicates) (run `cargo fix --test "events_regression" -p protocol` to apply 1 suggestion)
 warning: `protocol` (test "protocol_resolver_test") generated 3 warnings (3 duplicates)
 warning: `protocol` (test "protocol_attestation_test") generated 7 warnings (5 duplicates) (run `cargo fix --test "protocol_attestation_test" -p protocol` to apply 2 suggestions)
 warning: `protocol` (test "protocol_cryptography_test") generated 4 warnings (run `cargo fix --test "protocol_cryptography_test" -p protocol` to apply 4 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 02s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.87s
      Running unittests src/lib.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol-3395496a704be39d)
 
 running 0 tests
@@ -327,23 +163,37 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 running 9 tests
 test test_generate_compatible_attestation_uid ... ok
-test test_attesting_with_unregistered_schema ... ok
 test test_querying_non_existent_attestation ... ok
+test test_attesting_with_unregistered_schema ... ok
 test test_attest_with_past_expiration_fails ... ok
-test test_attestation_and_expiration ... FAILED
 test test_handling_expired_attestations ... FAILED
-test create_and_get_attestation ... ok
+test test_attestation_and_expiration ... FAILED
 test test_can_revoke_non_revocable_schema ... ok
 test test_multiple_attestations_for_same_subject_and_schema ... ok
+test create_and_get_attestation ... ok
 
 failures:
+
+---- test_handling_expired_attestations stdout ----
+
+thread 'test_handling_expired_attestations' (85073) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+   1: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[fn_return, attest], data:Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f)
+   2: [Contract Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[ATTEST, CREATE], data:[Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f), Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, "{"origin":"saudi"}", 0, 0]
+   3: [Diagnostic Event] topics:[fn_call, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, attest], data:[CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), "{"origin":"saudi"}", 100]
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Writing test snapshot file for test "test_handling_expired_attestations" to "test_snapshots/test_handling_expired_attestations.1.json".
 
 ---- test_attestation_and_expiration stdout ----
 ==================================================================
    Running test case: test_attestation_and_expiration
 ==================================================================
 
-thread 'test_attestation_and_expiration' (71725) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+thread 'test_attestation_and_expiration' (85069) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
 called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
 
 Event log (newest first):
@@ -356,52 +206,38 @@ Event log (newest first):
 
 Writing test snapshot file for test "test_attestation_and_expiration" to "test_snapshots/test_attestation_and_expiration.1.json".
 
----- test_handling_expired_attestations stdout ----
-
-thread 'test_handling_expired_attestations' (71729) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
-called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
-
-Event log (newest first):
-   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
-   1: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[fn_return, attest], data:Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f)
-   2: [Contract Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[ATTEST, CREATE], data:[Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f), Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, "{"origin":"saudi"}", 0, 0]
-   3: [Diagnostic Event] topics:[fn_call, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, attest], data:[CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), "{"origin":"saudi"}", 100]
-
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-Writing test snapshot file for test "test_handling_expired_attestations" to "test_snapshots/test_handling_expired_attestations.1.json".
-
 
 failures:
     test_attestation_and_expiration
     test_handling_expired_attestations
 
-test result: FAILED. 7 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+test result: FAILED. 7 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
 
 error: test failed, to rerun pass `-p protocol --test protocol_attestation_test`
      Running tests/protocol_cryptography_test.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_cryptography_test-1fbfe61fae19e5df)
 
 running 19 tests
-test test_clean_room_revocation_message_hash ... ok
-test test_clean_room_attestation_message_hash ... ok
 test generate_valid_bls_constants ... ok
+test test_clean_room_attestation_message_hash ... ok
+test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
+test test_clean_room_revocation_message_hash ... ok
+test test_delegated_action_with_unregistered_key ... ok
 test test_hal07_compressed_pubkey_flag_returns_error_not_trap ... ok
 test test_hal07_off_curve_pubkey_returns_invalid_point ... ok
-test test_delegated_action_with_unregistered_key ... ok
-test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
 test test_bls_key_registration_and_event ... ok
 test test_valid_points ... ok
+test test_hal07_all_zeros_signature_returns_invalid_point ... ok
 test test_hal07_infinity_signature_flag_returns_error_not_trap ... ok
 test test_hal07_compressed_signature_flag_returns_error_not_trap ... ok
+test test_nonce_is_attester_specific ... ok
 test test_hal07_off_curve_signature_returns_invalid_point ... ok
 test test_nonce_incrementation ... ok
-test test_hal07_all_zeros_signature_returns_invalid_point ... ok
-test test_nonce_is_attester_specific ... ok
 test test_delegated_attestation_with_valid_signature ... ok
-test test_hal07_valid_signature_passes_structural_check ... ok
 test test_end_to_end_bls_signature_verification ... ok
+test test_hal07_valid_signature_passes_structural_check ... ok
 test test_nonce_replay_future_nonce_rejection ... ok
 
-test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.00s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.61s
 
      Running tests/protocol_delegation_test.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_delegation_test-1a87f5d12790fc45)
 
@@ -412,16 +248,16 @@ test test_hal01_duplicate_uid_guard_blocks_overwrite ... ok
 test test_hal05_valid_expiration_time_accepted ... ok
 test test_delegated_action_with_expired_deadline ... ok
 test test_h_contract4_subject_mismatch_in_delegated_revoke_rejected ... ok
-test test_delegated_revocation_with_valid_signature ... ok
-test test_hal03_delegated_revoke_replay_blocked_by_nonce ... ok
-test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
 test test_h_contract4_correct_subject_revoke_succeeds ... ok
 test test_nonce_is_scoped_to_attester_not_submitter ... ok
-test test_nonce_is_scoped_to_attester_not_subject ... ok
+test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
+test test_delegated_revocation_with_valid_signature ... ok
 test test_hal01_two_attesters_same_subject_nonce_no_collision ... ok
+test test_nonce_is_scoped_to_attester_not_subject ... ok
+test test_hal03_delegated_revoke_replay_blocked_by_nonce ... ok
 test test_c_contract1_revoker_nonce_increments_after_success ... ok
 
-test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
 
      Running tests/protocol_initialization_and_schema.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_initialization_and_schema-d90d9d0b71779990)
 
@@ -430,29 +266,29 @@ test test_duplicate_schema_registration_fails ... ok
 test test_same_definition_different_authority_succeeds ... ok
 test initialize_and_register_schema ... ok
 
-test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 
      Running tests/protocol_resolver_test.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_resolver_test-f109041449f1608f)
 
 running 8 tests
+test test_resolver_rejection_of_revocation ... ok
 test test_schema_without_resolver ... ok
 test test_schema_with_resolver_allows_attestation ... ok
-test test_resolver_onresolve_hook_called ... ok
-test test_resolver_rejection_of_revocation ... ok
 test test_resolver_onresolve_hook_called_after_revocation ... ok
+test test_resolver_onresolve_hook_called ... ok
 test test_multiple_schemas_with_different_resolvers ... ok
 test test_hal02_delegated_attest_calls_resolver_onattest ... ok
 test test_hal02_delegated_revoke_rejected_when_resolver_says_no ... ok
 
-test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
 
      Running tests/protocol_revocation_test.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_revocation_test-2d79b370d9861704)
 
 running 5 tests
 test test_revoking_non_existent_attestation_fails ... ok
-test revoke_by_nonce ... ok
-test test_revocation_by_unauthorized_parties ... ok
 test test_cannot_revoke_from_non_revocable_schema ... ok
+test test_revocation_by_unauthorized_parties ... ok
+test revoke_by_nonce ... ok
 test test_double_revocation_fails ... ok
 
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
@@ -463,13 +299,13 @@ running 2 tests
 test test_hal08_already_revoked_returns_correct_error ... ok
 test test_hal08_delegated_already_revoked_returns_correct_error ... ok
 
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
 
      Running tests/protocol_schema_uid_test.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/protocol_schema_uid_test-d2f787422ffdb4e1)
 
 running 3 tests
-test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
 test test_c_contract3_schema_uid_differs_by_revocable_flag ... ok
+test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
 test test_c_contract3_registration_collision_blocked_for_same_definition_diff_revocable ... ok
 
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
@@ -477,12 +313,12 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/resolver_abi.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/resolver_abi-c5e734a2b83db546)
 
 running 4 tests
+test test_resolver_abi_onrevoke_roundtrip ... ok
 test test_resolver_abi_onresolve_roundtrip ... ok
 test test_resolver_abi_onattest_roundtrip ... ok
-test test_resolver_abi_onrevoke_roundtrip ... ok
 test test_delegated_attest_with_default_resolver_succeeds ... ok
 
-test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
 
      Running tests/testutils.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/testutils-277e4b35e36fe9e3)
 
@@ -499,19 +335,19 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/default_resolver.rs (/home/sergio/.cache/sas-lab/t29/debug/deps/default_resolver-da15b7ae3a9102e2)
 
 running 7 tests
-test test_reject_self_attestation ... FAILED
 test test_reject_non_revocable_attestation_revocation ... FAILED
-test test_metadata ... FAILED
 test test_revocation_hooks ... FAILED
-test test_accept_valid_attestation ... FAILED
 test test_reject_expired_attestation ... FAILED
 test test_allow_revocable_attestation_revocation ... FAILED
+test test_reject_self_attestation ... FAILED
+test test_metadata ... FAILED
+test test_accept_valid_attestation ... FAILED
 
 failures:
 
----- test_reject_self_attestation stdout ----
+---- test_reject_non_revocable_attestation_revocation stdout ----
 
-thread 'test_reject_self_attestation' (71813) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+thread 'test_reject_non_revocable_attestation_revocation' (85168) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
 called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
 
 Event log (newest first):
@@ -519,36 +355,9 @@ Event log (newest first):
 
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
----- test_reject_non_revocable_attestation_revocation stdout ----
-
-thread 'test_reject_non_revocable_attestation_revocation' (71812) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
-called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
-
-Event log (newest first):
-   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
-
-
----- test_metadata stdout ----
-
-thread 'test_metadata' (71810) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
-called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
-
-Event log (newest first):
-   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
-
-
 ---- test_revocation_hooks stdout ----
 
-thread 'test_revocation_hooks' (71814) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
-called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
-
-Event log (newest first):
-   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
-
-
----- test_accept_valid_attestation stdout ----
-
-thread 'test_accept_valid_attestation' (71808) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+thread 'test_revocation_hooks' (85170) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
 called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
 
 Event log (newest first):
@@ -557,7 +366,7 @@ Event log (newest first):
 
 ---- test_reject_expired_attestation stdout ----
 
-thread 'test_reject_expired_attestation' (71811) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+thread 'test_reject_expired_attestation' (85167) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
 called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
 
 Event log (newest first):
@@ -566,7 +375,34 @@ Event log (newest first):
 
 ---- test_allow_revocable_attestation_revocation stdout ----
 
-thread 'test_allow_revocable_attestation_revocation' (71809) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+thread 'test_allow_revocable_attestation_revocation' (85165) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_reject_self_attestation stdout ----
+
+thread 'test_reject_self_attestation' (85169) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_metadata stdout ----
+
+thread 'test_metadata' (85166) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_accept_valid_attestation stdout ----
+
+thread 'test_accept_valid_attestation' (85164) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
 called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
 
 Event log (newest first):

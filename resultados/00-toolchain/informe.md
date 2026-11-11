@@ -1,5 +1,5 @@
 # Informe del ejercicio 00
-Generado: 2026-11-11 20:05:50 UTC
+Generado: 2026-11-11 20:29:14 UTC
 
 ## 1. Versiones
 ```
@@ -44,8 +44,8 @@ Causa(s) reportada(s) por el host:
 
 | Red | Protocolo | Ledger | Cierre |
 | --- | --- | --- | --- |
-| testnet | 30 | 5680762 | 2026-11-11 20:04:13 UTC |
-| mainnet | 29 (soporta 30) | 65428287 | 2026-11-11T20:04:37Z |
+| testnet | 30 | 5681057 | 2026-11-11 20:28:48 UTC |
+| mainnet | 29 (soporta 30) | 65428578 | 2026-11-11T20:28:52Z |
 
 Límites de testnet frente al análisis previo:
 

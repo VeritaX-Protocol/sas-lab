@@ -1,7 +1,21 @@
 stellar contract build --package resolvers --features export-default-resolver
 ℹ️  CARGO_BUILD_RUSTFLAGS=--remap-path-prefix=/home/sergio/.cargo/registry/src= SOROBAN_SDK_BUILD_SYSTEM_SUPPORTS_SPEC_SHAKING_V2=1 STELLAR_CLI_VERSION=30.0.1 cargo rustc --manifest-path=Cargo.toml --crate-type=cdylib --target=wasm32v1-none --release --features=export-default-resolver
+   Compiling byteorder v1.5.0
+   Compiling escape-bytes v0.1.1
+   Compiling num-traits v0.2.19
+   Compiling static_assertions v1.1.0
+   Compiling ethnum v1.5.3
+   Compiling stable_deref_trait v1.2.1
+   Compiling data-encoding v2.11.1
+   Compiling stellar-xdr v27.0.0
+   Compiling hash32 v0.3.1
+   Compiling heapless v0.8.0
+   Compiling stellar-strkey v0.0.16
+   Compiling soroban-env-common v27.0.1
+   Compiling soroban-env-guest v27.0.1
+   Compiling soroban-sdk v27.0.6
    Compiling resolvers v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/resolvers)
-    Finished `release` profile [optimized] target(s) in 0.26s
+    Finished `release` profile [optimized] target(s) in 4.46s
 ℹ️  Build Summary:
     Wasm File: /home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/target/wasm32v1-none/release/resolvers.wasm (3542 bytes optimized (original size was 3852 bytes))
     Wasm Hash: 33da5f8a0f6bf351e19fa2f20a5953c5db96659f2dabf4131b4f868a3ceefd24
