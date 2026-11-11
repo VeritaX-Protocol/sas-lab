@@ -1,0 +1,42 @@
+== extend_ttl
+  (tests: 0 archivos)
+== instance()
+protocol/src/lib.rs:38:        if env.storage().instance().has(&DataKey::Admin) {
+protocol/src/lib.rs:45:        env.storage().instance().set(&DataKey::Admin, &admin);
+protocol/src/instructions/schema.rs:22:        .instance()
+protocol/src/instructions/schema.rs:95:    if env.storage().instance().has(&schema_key) {
+protocol/src/instructions/schema.rs:106:    env.storage().instance().set(&schema_key, &schema);
+protocol/src/utils.rs:155:    env.storage().instance().get(&key)
+protocol/src/utils.rs:177:    env.storage().instance().get(&key)
+  (tests: 2 archivos)
+== persistent()
+protocol/src/lib.rs:227:            .persistent()
+protocol/src/utils.rs:190:    env.storage().persistent().get::<DataKey, u64>(&nonce_key).unwrap_or(0)
+protocol/src/instructions/crypto.rs:208:    if env.storage().persistent().has(&pk_key) {
+protocol/src/instructions/crypto.rs:231:    env.storage().persistent().set(&pk_key, &bls_key);
+protocol/src/instructions/crypto.rs:248:        .persistent()
+protocol/src/instructions/crypto.rs:318:        .persistent()
+protocol/src/instructions/attestation.rs:210:    env.storage().persistent().set(&attest_uid_key, &attestation);
+protocol/src/instructions/attestation.rs:215:    env.storage().persistent().set(&nonce_key, &new_nonce);
+protocol/src/instructions/attestation.rs:262:        .persistent()
+protocol/src/instructions/attestation.rs:294:        .persistent()
+protocol/src/instructions/attestation.rs:347:    env.storage().persistent().set(&attest_key, &attestation);
+protocol/src/instructions/delegation.rs:95:        .persistent()
+protocol/src/instructions/delegation.rs:137:    env.storage().persistent().set(&attest_key, &attestation);
+protocol/src/instructions/delegation.rs:184:        .persistent()
+protocol/src/instructions/delegation.rs:262:    env.storage().persistent().set(&attest_key, &attestation);
+protocol/src/instructions/delegation.rs:344:    let current_nonce = env.storage().persistent().get::<DataKey, u64>(&nonce_key).unwrap_or(0);
+protocol/src/instructions/delegation.rs:355:    env.storage().persistent().set(&nonce_key, &new_nonce);
+protocol/src/instructions/delegation.rs:378:        .persistent()
+protocol/src/instructions/delegation.rs:385:    env.storage().persistent().set(&nonce_key, &new_nonce);
+  (tests: 2 archivos)
+== temporary()
+  (tests: 0 archivos)
+== mock_all_auths
+  (tests: 10 archivos)
+== mock_auths
+  (tests: 4 archivos)
+== update_current_contract_wasm
+  (tests: 0 archivos)
+== __constructor
+  (tests: 0 archivos)

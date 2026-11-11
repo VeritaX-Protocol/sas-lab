@@ -1,0 +1,7 @@
+rustc 1.99.1 (58cf8f9c3 2026-10-13)
+cargo 1.99.1 (5f94df478 2026-08-27)
+wasm32v1-none
+x86_64-unknown-linux-gnu
+stellar 30.0.1 (f2a7b74175c34585f3b30a1abf42a2d41cbcc390)
+v26.13.0
+git version 2.43.0

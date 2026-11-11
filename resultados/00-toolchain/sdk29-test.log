@@ -1,0 +1,424 @@
+warning: unused import: `Events`
+  --> protocol/tests/events_regression.rs:18:31
+   |
+18 |     testutils::{Address as _, Events, Ledger as _},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_G2_PUBLIC_KEY` is never used
+  --> protocol/tests/testutils.rs:21:11
+   |
+21 | pub const TEST_BLS_G2_PUBLIC_KEY: [u8; 192] = [
+   |           ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_PRIVATE_KEY` is never used
+  --> protocol/tests/testutils.rs:32:11
+   |
+32 | pub const TEST_BLS_PRIVATE_KEY: [u8; 32] = [
+   |           ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `group_one_generator` is never used
+  --> protocol/tests/testutils.rs:61:8
+   |
+61 | pub fn group_one_generator() -> G1Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `group_two_generator` is never used
+  --> protocol/tests/testutils.rs:65:8
+   |
+65 | pub fn group_two_generator() -> G2Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `create_delegated_attestation_request` is never used
+  --> protocol/tests/testutils.rs:75:8
+   |
+75 | pub fn create_delegated_attestation_request(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `group_one_generator` is never used
+  --> protocol/tests/testutils.rs:61:8
+   |
+61 | pub fn group_one_generator() -> G1Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `all_events` is never used
+   --> protocol/tests/testutils.rs:182:8
+    |
+182 | pub fn all_events(env: &Env) -> soroban_sdk::Vec<(Address, soroban_sdk::Vec<soroban_sdk::Val>, soroban_sdk::Val)> {
+    |        ^^^^^^^^^^
+
+warning: unused import: `Events`
+  --> protocol/tests/protocol_cryptography_test.rs:51:31
+   |
+51 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:148:9
+    |
+148 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:231:9
+    |
+231 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:344:9
+    |
+344 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+
+warning: unused import: `Events`
+ --> protocol/tests/protocol_initialization_and_schema.rs:5:31
+  |
+5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+  |                               ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `errors::Error`
+ --> protocol/tests/protocol_attestation_test.rs:3:5
+  |
+3 |     errors::Error,
+  |     ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Events`
+  --> protocol/tests/protocol_attestation_test.rs:14:31
+   |
+14 |     testutils::{Address as _, Events, Ledger, LedgerInfo, MockAuth, MockAuthInvoke},
+   |                               ^^^^^^
+
+warning: unused import: `Events`
+ --> protocol/tests/protocol_revocation_test.rs:5:31
+  |
+5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+  |                               ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `protocol` (test "events_regression") generated 6 warnings (run `cargo fix --test "events_regression" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_resolver_test") generated 3 warnings (1 duplicate)
+warning: `protocol` (test "protocol_cryptography_test") generated 4 warnings (run `cargo fix --test "protocol_cryptography_test" -p protocol` to apply 4 suggestions)
+warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "resolver_abi") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_attestation_test") generated 7 warnings (5 duplicates) (run `cargo fix --test "protocol_attestation_test" -p protocol` to apply 2 suggestions)
+warning: `protocol` (test "protocol_revocation_test") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_revocation_test" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_delegation_test") generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running unittests src/lib.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol-3395496a704be39d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/__protocol_bls_gaffine_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/__protocol_bls_gaffine_test-34ba9fe4dd7fa45c)
+
+running 3 tests
+test cross_check_g2_generator_between_crates ... ok
+test generate_and_log_bls_test_vectors_with_blst ... ok
+test dump_and_verify_g2_generator ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/events_regression.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/events_regression-c0710b731c2b1662)
+
+running 2 tests
+test test_attest_create_event_includes_schema_uid ... ok
+test test_schema_register_event_has_no_redundant_authority ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/protocol_attestation_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_attestation_test-5995772902d18e5e)
+
+running 9 tests
+test test_generate_compatible_attestation_uid ... ok
+test test_attesting_with_unregistered_schema ... ok
+test test_querying_non_existent_attestation ... ok
+test test_handling_expired_attestations ... FAILED
+test test_attest_with_past_expiration_fails ... ok
+test test_attestation_and_expiration ... FAILED
+test create_and_get_attestation ... ok
+test test_can_revoke_non_revocable_schema ... ok
+test test_multiple_attestations_for_same_subject_and_schema ... ok
+
+failures:
+
+---- test_handling_expired_attestations stdout ----
+
+thread 'test_handling_expired_attestations' (51041) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+   1: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[fn_return, attest], data:Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f)
+   2: [Contract Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[ATTEST, CREATE], data:[Bytes(b83bafa543fa0ef68d5615ff9dc5e50f57ec4a339f48e46726fec0a72bc4588f), Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, "{"origin":"saudi"}", 0, 0]
+   3: [Diagnostic Event] topics:[fn_call, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, attest], data:[CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, Bytes(97dd54ebd6b7047170c2e0dd095cdc57e0166340e4969066adc328d9abee1c0b), "{"origin":"saudi"}", 100]
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Writing test snapshot file for test "test_handling_expired_attestations" to "test_snapshots/test_handling_expired_attestations.1.json".
+
+---- test_attestation_and_expiration stdout ----
+==================================================================
+   Running test case: test_attestation_and_expiration
+==================================================================
+
+thread 'test_attestation_and_expiration' (51037) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+   1: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[fn_return, register], data:Bytes(c8c5ad8600f85c3ec6b6705ebc528473293e71beffea21ba7ce3bca38d4e0434)
+   2: [Contract Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[SCHEMA, REGISTER], data:[Bytes(c8c5ad8600f85c3ec6b6705ebc528473293e71beffea21ba7ce3bca38d4e0434), {authority: CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, definition: "XDR:XDR:1f6170e38257e008482f2178ab8f7aa6f4ff3cd7b906802c818a74f2a54d2202", resolver: Void, revocable: false}]
+   3: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, topics:[fn_return, __check_auth], data:Void
+   4: [Diagnostic Event] contract:CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, topics:[fn_call, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, __check_auth], data:[Bytes(ff70a35cb1797a77daaf0efcc9e7630eb250fafa2eeb4e942a5eea3f43374084), Void, [[Contract, {args: [CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, "XDR:XDR:1f6170e38257e008482f2178ab8f7aa6f4ff3cd7b906802c818a74f2a54d2202", Void, false], contract: CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, fn_name: register}]]]
+   5: [Diagnostic Event] topics:[fn_call, CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM, register], data:[CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M, "XDR:XDR:1f6170e38257e008482f2178ab8f7aa6f4ff3cd7b906802c818a74f2a54d2202", Void, false]
+
+Writing test snapshot file for test "test_attestation_and_expiration" to "test_snapshots/test_attestation_and_expiration.1.json".
+
+
+failures:
+    test_attestation_and_expiration
+    test_handling_expired_attestations
+
+test result: FAILED. 7 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+error: test failed, to rerun pass `-p protocol --test protocol_attestation_test`
+     Running tests/protocol_cryptography_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_cryptography_test-1fbfe61fae19e5df)
+
+running 19 tests
+test generate_valid_bls_constants ... ok
+test test_clean_room_revocation_message_hash ... ok
+test test_clean_room_attestation_message_hash ... ok
+test test_hal07_compressed_pubkey_flag_returns_error_not_trap ... ok
+test test_hal07_off_curve_pubkey_returns_invalid_point ... ok
+test test_hal07_compressed_signature_flag_returns_error_not_trap ... ok
+test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
+test test_delegated_action_with_unregistered_key ... ok
+test test_bls_key_registration_and_event ... ok
+test test_hal07_off_curve_signature_returns_invalid_point ... ok
+test test_valid_points ... ok
+test test_nonce_incrementation ... ok
+test test_hal07_all_zeros_signature_returns_invalid_point ... ok
+test test_hal07_infinity_signature_flag_returns_error_not_trap ... ok
+test test_nonce_is_attester_specific ... ok
+test test_delegated_attestation_with_valid_signature ... ok
+test test_end_to_end_bls_signature_verification ... ok
+test test_hal07_valid_signature_passes_structural_check ... ok
+test test_nonce_replay_future_nonce_rejection ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.54s
+
+     Running tests/protocol_delegation_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_delegation_test-1a87f5d12790fc45)
+
+running 14 tests
+test test_hal01_uid_reference_vector_for_w5 ... ok
+test test_hal05_expired_expiration_time_rejected ... ok
+test test_hal01_duplicate_uid_guard_blocks_overwrite ... ok
+test test_hal05_valid_expiration_time_accepted ... ok
+test test_h_contract4_subject_mismatch_in_delegated_revoke_rejected ... ok
+test test_delegated_action_with_expired_deadline ... ok
+test test_delegated_revocation_with_valid_signature ... ok
+test test_hal03_delegated_revoke_replay_blocked_by_nonce ... ok
+test test_h_contract4_correct_subject_revoke_succeeds ... ok
+test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
+test test_hal01_two_attesters_same_subject_nonce_no_collision ... ok
+test test_nonce_is_scoped_to_attester_not_submitter ... ok
+test test_nonce_is_scoped_to_attester_not_subject ... ok
+test test_c_contract1_revoker_nonce_increments_after_success ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/protocol_initialization_and_schema.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_initialization_and_schema-d90d9d0b71779990)
+
+running 3 tests
+test test_same_definition_different_authority_succeeds ... ok
+test test_duplicate_schema_registration_fails ... ok
+test initialize_and_register_schema ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/protocol_resolver_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_resolver_test-f109041449f1608f)
+
+running 8 tests
+test test_schema_without_resolver ... ok
+test test_schema_with_resolver_allows_attestation ... ok
+test test_resolver_onresolve_hook_called ... ok
+test test_resolver_rejection_of_revocation ... ok
+test test_resolver_onresolve_hook_called_after_revocation ... ok
+test test_multiple_schemas_with_different_resolvers ... ok
+test test_hal02_delegated_attest_calls_resolver_onattest ... ok
+test test_hal02_delegated_revoke_rejected_when_resolver_says_no ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/protocol_revocation_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_revocation_test-2d79b370d9861704)
+
+running 5 tests
+test test_revoking_non_existent_attestation_fails ... ok
+test test_double_revocation_fails ... ok
+test test_cannot_revoke_from_non_revocable_schema ... ok
+test revoke_by_nonce ... ok
+test test_revocation_by_unauthorized_parties ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/protocol_revoke_error_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_revoke_error_test-e957cda40d05420e)
+
+running 2 tests
+test test_hal08_already_revoked_returns_correct_error ... ok
+test test_hal08_delegated_already_revoked_returns_correct_error ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/protocol_schema_uid_test.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/protocol_schema_uid_test-d2f787422ffdb4e1)
+
+running 3 tests
+test test_c_contract3_schema_uid_differs_by_revocable_flag ... ok
+test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
+test test_c_contract3_registration_collision_blocked_for_same_definition_diff_revocable ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/resolver_abi.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/resolver_abi-c5e734a2b83db546)
+
+running 4 tests
+test test_resolver_abi_onrevoke_roundtrip ... ok
+test test_resolver_abi_onresolve_roundtrip ... ok
+test test_resolver_abi_onattest_roundtrip ... ok
+test test_delegated_attest_with_default_resolver_succeeds ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/testutils.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/testutils-277e4b35e36fe9e3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/resolvers-7d9926a1807b3b68)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/default_resolver.rs (/tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/t29/debug/deps/default_resolver-da15b7ae3a9102e2)
+
+running 7 tests
+test test_revocation_hooks ... FAILED
+test test_reject_non_revocable_attestation_revocation ... FAILED
+test test_reject_self_attestation ... FAILED
+test test_reject_expired_attestation ... FAILED
+test test_allow_revocable_attestation_revocation ... FAILED
+test test_accept_valid_attestation ... FAILED
+test test_metadata ... FAILED
+
+failures:
+
+---- test_revocation_hooks stdout ----
+
+thread 'test_revocation_hooks' (51161) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- test_reject_non_revocable_attestation_revocation stdout ----
+
+thread 'test_reject_non_revocable_attestation_revocation' (51159) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_reject_self_attestation stdout ----
+
+thread 'test_reject_self_attestation' (51160) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_reject_expired_attestation stdout ----
+
+thread 'test_reject_expired_attestation' (51158) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_allow_revocable_attestation_revocation stdout ----
+
+thread 'test_allow_revocable_attestation_revocation' (51156) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_accept_valid_attestation stdout ----
+
+thread 'test_accept_valid_attestation' (51155) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+---- test_metadata stdout ----
+
+thread 'test_metadata' (51157) panicked at /home/sergio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/soroban-sdk-29.0.1/src/ledger.rs:117:40:
+called `Result::unwrap()` on an `Err` value: HostError: Error(Context, InternalError)
+
+Event log (newest first):
+   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:["ledger protocol version too old for host", 27]
+
+
+
+failures:
+    test_accept_valid_attestation
+    test_allow_revocable_attestation_revocation
+    test_metadata
+    test_reject_expired_attestation
+    test_reject_non_revocable_attestation_revocation
+    test_reject_self_attestation
+    test_revocation_hooks
+
+test result: FAILED. 0 passed; 7 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p resolvers --test default_resolver`
+   Doc-tests protocol
+
+running 7 tests
+test protocol/src/instructions/delegation.rs - instructions::delegation::create_attestation_message (line 405) ... ignored
+test protocol/src/instructions/delegation.rs - instructions::delegation::create_revocation_message (line 518) ... ignored
+test protocol/src/instructions/schema.rs - instructions::schema::register_schema (line 54) ... ignored
+test protocol/src/utils.rs - utils::_get_authority (line 146) ... ignored
+test protocol/src/utils.rs - utils::create_xdr_string (line 212) ... ignored
+test protocol/src/utils.rs - utils::generate_attestation_uid (line 89) ... ignored
+test protocol/src/utils.rs - utils::get_schema (line 168) ... ignored
+
+test result: ok. 0 passed; 0 failed; 7 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: 2 targets failed:
+    `-p protocol --test protocol_attestation_test`
+    `-p resolvers --test default_resolver`
