@@ -19,6 +19,40 @@ warning: function `all_events` is never used
     |        ^^^^^^^^^^
 
 warning: unused import: `Events`
+  --> protocol/tests/events_regression.rs:18:31
+   |
+18 |     testutils::{Address as _, Events, Ledger as _},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_G2_PUBLIC_KEY` is never used
+  --> protocol/tests/testutils.rs:21:11
+   |
+21 | pub const TEST_BLS_G2_PUBLIC_KEY: [u8; 192] = [
+   |           ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_PRIVATE_KEY` is never used
+  --> protocol/tests/testutils.rs:32:11
+   |
+32 | pub const TEST_BLS_PRIVATE_KEY: [u8; 32] = [
+   |           ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `group_one_generator` is never used
+  --> protocol/tests/testutils.rs:61:8
+   |
+61 | pub fn group_one_generator() -> G1Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `create_delegated_attestation_request` is never used
+  --> protocol/tests/testutils.rs:75:8
+   |
+75 | pub fn create_delegated_attestation_request(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Events`
   --> protocol/tests/protocol_cryptography_test.rs:51:31
    |
 51 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
@@ -54,32 +88,13 @@ warning: unused import: `Events`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: constant `TEST_BLS_G2_PUBLIC_KEY` is never used
-  --> protocol/tests/testutils.rs:21:11
-   |
-21 | pub const TEST_BLS_G2_PUBLIC_KEY: [u8; 192] = [
-   |           ^^^^^^^^^^^^^^^^^^^^^^
-   |
-   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
-
-warning: constant `TEST_BLS_PRIVATE_KEY` is never used
-  --> protocol/tests/testutils.rs:32:11
-   |
-32 | pub const TEST_BLS_PRIVATE_KEY: [u8; 32] = [
-   |           ^^^^^^^^^^^^^^^^^^^^
-
-warning: function `group_one_generator` is never used
-  --> protocol/tests/testutils.rs:61:8
-   |
-61 | pub fn group_one_generator() -> G1Affine {
-   |        ^^^^^^^^^^^^^^^^^^^
-
-warning: function `create_delegated_attestation_request` is never used
-  --> protocol/tests/testutils.rs:75:8
-   |
-75 | pub fn create_delegated_attestation_request(
-   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+warning: `protocol` (test "protocol_delegation_test") generated 3 warnings
+warning: `protocol` (test "events_regression") generated 6 warnings (1 duplicate) (run `cargo fix --test "events_regression" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_resolver_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_cryptography_test") generated 4 warnings (run `cargo fix --test "protocol_cryptography_test" -p protocol` to apply 4 suggestions)
+warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "resolver_abi") generated 3 warnings (3 duplicates)
 warning: unused import: `errors::Error`
  --> protocol/tests/protocol_attestation_test.rs:3:5
   |
@@ -102,24 +117,9 @@ warning: unused import: `Events`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: `protocol` (test "protocol_resolver_test") generated 3 warnings
-warning: `protocol` (test "protocol_cryptography_test") generated 4 warnings (run `cargo fix --test "protocol_cryptography_test" -p protocol` to apply 4 suggestions)
-warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (3 duplicates)
-warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (1 duplicate) (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
-warning: `protocol` (test "resolver_abi") generated 3 warnings (3 duplicates)
 warning: `protocol` (test "protocol_attestation_test") generated 7 warnings (5 duplicates) (run `cargo fix --test "protocol_attestation_test" -p protocol` to apply 2 suggestions)
 warning: `protocol` (test "protocol_revocation_test") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_revocation_test" -p protocol` to apply 1 suggestion)
-warning: `protocol` (test "protocol_delegation_test") generated 3 warnings (3 duplicates)
-warning: unused import: `Events`
-  --> protocol/tests/events_regression.rs:18:31
-   |
-18 |     testutils::{Address as _, Events, Ledger as _},
-   |                               ^^^^^^
-   |
-   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-warning: `protocol` (test "events_regression") generated 6 warnings (5 duplicates) (run `cargo fix --test "events_regression" -p protocol` to apply 1 suggestion)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
      Running unittests src/lib.rs (target/debug/deps/protocol-c688ee012cad06a6)
 
 running 0 tests
@@ -146,9 +146,9 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/protocol_attestation_test.rs (target/debug/deps/protocol_attestation_test-b72303d90913a6cd)
 
 running 9 tests
+test test_generate_compatible_attestation_uid ... ok
 test test_querying_non_existent_attestation ... ok
 test test_attesting_with_unregistered_schema ... ok
-test test_generate_compatible_attestation_uid ... ok
 test test_handling_expired_attestations ... ok
 test test_attest_with_past_expiration_fails ... ok
 test create_and_get_attestation ... ok
@@ -156,7 +156,7 @@ test test_can_revoke_non_revocable_schema ... ok
 test test_attestation_and_expiration ... ok
 test test_multiple_attestations_for_same_subject_and_schema ... ok
 
-test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
 
      Running tests/protocol_cryptography_test.rs (target/debug/deps/protocol_cryptography_test-e1b4c3bd51f5ef7c)
 
@@ -164,11 +164,11 @@ running 19 tests
 test generate_valid_bls_constants ... ok
 test test_clean_room_revocation_message_hash ... ok
 test test_clean_room_attestation_message_hash ... ok
-test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
-test test_hal07_compressed_pubkey_flag_returns_error_not_trap ... ok
 test test_delegated_action_with_unregistered_key ... ok
-test test_bls_key_registration_and_event ... ok
 test test_hal07_off_curve_pubkey_returns_invalid_point ... ok
+test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
+test test_bls_key_registration_and_event ... ok
+test test_hal07_compressed_pubkey_flag_returns_error_not_trap ... ok
 test test_valid_points ... ok
 test test_hal07_all_zeros_signature_returns_invalid_point ... ok
 test test_hal07_off_curve_signature_returns_invalid_point ... ok
@@ -181,7 +181,7 @@ test test_delegated_attestation_with_valid_signature ... ok
 test test_end_to_end_bls_signature_verification ... ok
 test test_nonce_replay_future_nonce_rejection ... ok
 
-test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.32s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.37s
 
      Running tests/protocol_delegation_test.rs (target/debug/deps/protocol_delegation_test-f760740dfcc42e88)
 
@@ -189,16 +189,16 @@ running 14 tests
 test test_hal01_uid_reference_vector_for_w5 ... ok
 test test_hal05_expired_expiration_time_rejected ... ok
 test test_hal01_duplicate_uid_guard_blocks_overwrite ... ok
-test test_h_contract4_subject_mismatch_in_delegated_revoke_rejected ... ok
 test test_delegated_action_with_expired_deadline ... ok
-test test_delegated_revocation_with_valid_signature ... ok
 test test_hal05_valid_expiration_time_accepted ... ok
-test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
-test test_h_contract4_correct_subject_revoke_succeeds ... ok
+test test_h_contract4_subject_mismatch_in_delegated_revoke_rejected ... ok
 test test_nonce_is_scoped_to_attester_not_subject ... ok
+test test_nonce_is_scoped_to_attester_not_submitter ... ok
+test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
+test test_delegated_revocation_with_valid_signature ... ok
+test test_h_contract4_correct_subject_revoke_succeeds ... ok
 test test_hal03_delegated_revoke_replay_blocked_by_nonce ... ok
 test test_hal01_two_attesters_same_subject_nonce_no_collision ... ok
-test test_nonce_is_scoped_to_attester_not_submitter ... ok
 test test_c_contract1_revoker_nonce_increments_after_success ... ok
 
 test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
@@ -207,31 +207,31 @@ test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
 
 running 3 tests
 test test_duplicate_schema_registration_fails ... ok
-test initialize_and_register_schema ... ok
 test test_same_definition_different_authority_succeeds ... ok
+test initialize_and_register_schema ... ok
 
-test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
 
      Running tests/protocol_resolver_test.rs (target/debug/deps/protocol_resolver_test-c7c929bf92de659b)
 
 running 8 tests
-test test_resolver_onresolve_hook_called ... ok
 test test_schema_with_resolver_allows_attestation ... ok
 test test_schema_without_resolver ... ok
-test test_resolver_onresolve_hook_called_after_revocation ... ok
 test test_resolver_rejection_of_revocation ... ok
+test test_resolver_onresolve_hook_called ... ok
+test test_resolver_onresolve_hook_called_after_revocation ... ok
 test test_multiple_schemas_with_different_resolvers ... ok
 test test_hal02_delegated_attest_calls_resolver_onattest ... ok
 test test_hal02_delegated_revoke_rejected_when_resolver_says_no ... ok
 
-test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
 
      Running tests/protocol_revocation_test.rs (target/debug/deps/protocol_revocation_test-db778818fa099aaf)
 
 running 5 tests
 test test_revoking_non_existent_attestation_fails ... ok
-test revoke_by_nonce ... ok
 test test_cannot_revoke_from_non_revocable_schema ... ok
+test revoke_by_nonce ... ok
 test test_double_revocation_fails ... ok
 test test_revocation_by_unauthorized_parties ... ok
 
@@ -248,8 +248,8 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/protocol_schema_uid_test.rs (target/debug/deps/protocol_schema_uid_test-88203ae66d48a394)
 
 running 3 tests
-test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
 test test_c_contract3_schema_uid_differs_by_revocable_flag ... ok
+test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
 test test_c_contract3_registration_collision_blocked_for_same_definition_diff_revocable ... ok
 
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
@@ -257,9 +257,9 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/resolver_abi.rs (target/debug/deps/resolver_abi-0af6728d67e09e44)
 
 running 4 tests
-test test_resolver_abi_onattest_roundtrip ... ok
 test test_resolver_abi_onresolve_roundtrip ... ok
 test test_resolver_abi_onrevoke_roundtrip ... ok
+test test_resolver_abi_onattest_roundtrip ... ok
 test test_delegated_attest_with_default_resolver_succeeds ... ok
 
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
@@ -279,11 +279,11 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/default_resolver.rs (target/debug/deps/default_resolver-accbe654de05b14e)
 
 running 7 tests
-test test_reject_non_revocable_attestation_revocation ... ok
 test test_reject_expired_attestation ... ok
+test test_reject_non_revocable_attestation_revocation ... ok
 test test_metadata ... ok
-test test_allow_revocable_attestation_revocation ... ok
 test test_accept_valid_attestation ... ok
+test test_allow_revocable_attestation_revocation ... ok
 test test_revocation_hooks ... ok
 test test_reject_self_attestation ... ok
 

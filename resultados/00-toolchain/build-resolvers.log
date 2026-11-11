@@ -1,0 +1,17 @@
+stellar contract build --package resolvers --features export-default-resolver
+ℹ️  CARGO_BUILD_RUSTFLAGS=--remap-path-prefix=/home/sergio/.cargo/registry/src= SOROBAN_SDK_BUILD_SYSTEM_SUPPORTS_SPEC_SHAKING_V2=1 STELLAR_CLI_VERSION=30.0.1 cargo rustc --manifest-path=Cargo.toml --crate-type=cdylib --target=wasm32v1-none --release --features=export-default-resolver
+   Compiling resolvers v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/resolvers)
+    Finished `release` profile [optimized] target(s) in 0.26s
+ℹ️  Build Summary:
+    Wasm File: /home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/target/wasm32v1-none/release/resolvers.wasm (3542 bytes optimized (original size was 3852 bytes))
+    Wasm Hash: 33da5f8a0f6bf351e19fa2f20a5953c5db96659f2dabf4131b4f868a3ceefd24
+    Wasm Size: 3542 bytes optimized (original size was 3852 bytes)
+    Exported Functions: 4 found
+      • metadata
+      • onattest
+      • onresolve
+      • onrevoke
+✅ Build Complete
+
+cp "../../stellar/target/wasm32v1-none/release/resolvers.wasm" "dist/resolvers-default.wasm"
+Built: dist/resolvers-default.wasm

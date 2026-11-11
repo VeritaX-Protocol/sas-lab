@@ -1,0 +1,27 @@
+Building contract for WASM target...
+stellar contract build --package protocol
+ℹ️  CARGO_BUILD_RUSTFLAGS=--remap-path-prefix=/home/sergio/.cargo/registry/src= SOROBAN_SDK_BUILD_SYSTEM_SUPPORTS_SPEC_SHAKING_V2=1 STELLAR_CLI_VERSION=30.0.1 cargo rustc --manifest-path=Cargo.toml --crate-type=cdylib --target=wasm32v1-none --release
+   Compiling resolvers v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/resolvers)
+   Compiling protocol v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/protocol)
+    Finished `release` profile [optimized] target(s) in 0.65s
+ℹ️  Build Summary:
+    Wasm File: /home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/00-toolchain/attestprotocol/contracts/stellar/target/wasm32v1-none/release/protocol.wasm (34287 bytes optimized (original size was 37386 bytes))
+    Wasm Hash: a3b2dfce05d3840f7f872766b8426035c08c769e1d5496a64b556b5eff97fc5a
+    Wasm Size: 34287 bytes optimized (original size was 37386 bytes)
+    Exported Functions: 14 found
+      • attest
+      • attest_by_delegation
+      • get_attestation
+      • get_attester_nonce
+      • get_bls_key
+      • get_dst_for_attestation
+      • get_dst_for_revocation
+      • get_revoker_nonce
+      • get_schema
+      • initialize
+      • register
+      • register_bls_key
+      • revoke
+      • revoke_by_delegation
+✅ Build Complete
+

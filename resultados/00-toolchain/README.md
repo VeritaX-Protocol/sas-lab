@@ -18,6 +18,22 @@ Comprueba que esta máquina compila y prueba el contrato heredado de Attest Prot
 
 No hay `.env.local` ni claves en esta carpeta. Si falta algo de la tabla, detente y pregunta: este ejercicio **verifica** el entorno, no lo instala.
 
+## Forma rápida: scripts
+
+```bash
+cd resultados/00-toolchain
+scripts/ejecutar.sh                    # todos los pasos y genera informe.md (~4 min la primera vez)
+scripts/ejecutar.sh pruebas wasm       # solo algunos pasos
+scripts/ejecutar.sh informe            # solo reconstruir informe.md desde los logs
+```
+
+Pasos disponibles: `versiones`, `clon`, `pruebas`, `wasm`, `red`, `identidades`, `auditoria`, `sdk29`, `informe`.
+
+- Cada paso escribe su log en esta carpeta y el paso `informe` los resume en [informe.md](informe.md): tablas de pruebas, tamaño del Wasm, red y límites (con "coincide / DIFIERE / nuevo" frente al análisis previo), uso de storage del contrato e identidades.
+- El script es repetible: no regenera identidades que ya existen y la micro-prueba de SDK 29 usa un `git worktree` temporal, así que el clon queda siempre en `c0c4529`.
+- Para reutilizar una compilación de SDK 29 ya hecha: `SAS_TARGET_SDK29=/ruta/target scripts/ejecutar.sh sdk29` (por defecto `~/.cache/sas-lab/t29`).
+- Los pasos de abajo explican qué hace cada uno por si prefieres ejecutarlos a mano.
+
 ## Cómo repetirlo, paso a paso
 
 Todos los comandos se ejecutan desde `sas-lab/resultados/00-toolchain/`, salvo que se indique otra carpeta. Anota la fecha y hora UTC al empezar: la red cambia.
@@ -165,6 +181,7 @@ Completa [NOTA.md](NOTA.md) con la plantilla del [LEEME](../../LEEME.md#8-planti
 | `ajustes-testnet.json` | Límites de la red (protocolo 30) | 6 |
 | `version-testnet.json`, `ledger-testnet.json`, `version-mainnet.txt` | Protocolo y ledger de cada red | 6 |
 | `identidades-publicas.txt` | Solo claves públicas | 7 |
+| `informe.md`, `auditoria.txt`, `build-*.log` | Resumen legible y datos de apoyo (scripts) | — |
 | `sdk29-test.log` | Micro-prueba con `soroban-sdk 29.0.1` | 9 |
 
 ## Casos negativos probados
