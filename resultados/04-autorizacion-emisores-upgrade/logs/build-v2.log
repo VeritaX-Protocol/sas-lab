@@ -1,0 +1,32 @@
+ℹ️  CARGO_BUILD_RUSTFLAGS=--remap-path-prefix=/home/sergio/.cargo/registry/src= SOROBAN_SDK_BUILD_SYSTEM_SUPPORTS_SPEC_SHAKING_V2=1 STELLAR_CLI_VERSION=30.0.1 cargo rustc --manifest-path=protocol/Cargo.toml --crate-type=cdylib --target=wasm32v1-none --release --features=v2
+   Compiling protocol v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/04-autorizacion-emisores-upgrade/attestprotocol-emisores/contracts/stellar/protocol)
+    Finished `release` profile [optimized] target(s) in 0.83s
+ℹ️  Build Summary:
+    Wasm File: /tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/wv2/protocol.wasm (38494 bytes optimized (original size was 42219 bytes))
+    Wasm Hash: df6a750077b12d065019012e860bea5a4bacc1f2a72ce857321297651e4bb3b9
+    Wasm Size: 38494 bytes optimized (original size was 42219 bytes)
+    Exported Functions: 22 found
+      • add_issuer
+      • attest
+      • attest_by_delegation
+      • extend_attestation_ttl
+      • get_attestation
+      • get_attester_nonce
+      • get_bls_key
+      • get_dst_for_attestation
+      • get_dst_for_revocation
+      • get_revoker_nonce
+      • get_schema
+      • initialize
+      • is_active_issuer
+      • issuer_status
+      • list_issuers
+      • register
+      • register_bls_key
+      • retire_issuer
+      • revoke
+      • revoke_by_delegation
+      • upgrade
+      • version
+✅ Build Complete
+

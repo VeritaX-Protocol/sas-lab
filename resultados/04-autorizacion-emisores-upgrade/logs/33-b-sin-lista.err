@@ -1,0 +1,6 @@
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: 82b3e9b89e786128bc44c09c20452755901105488732ae411496a4753dfced1b
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/82b3e9b89e786128bc44c09c20452755901105488732ae411496a4753dfced1b
+📅 CBUG6M3ARCVTLH2RNLZSKKQVJNQHF2QTJ6IC43ZBHRLND25QFDIBXDD7 - Success - Event: [{"symbol":"ATTEST"},{"symbol":"CREATE"}] = {"vec":[{"bytes":"aaee1b81ce76b7e6134f1830fd8844ea87dab58d9bfc6176ea38f3743962b68e"},{"bytes":"ef00f224b91b1a41545ae9ac9349bc8fb28cdd06f126feb436fce9df65fb06b8"},{"address":"GDWGKG6HRWEUJODF733QP3XFPC4WSQE422NZ7EHJSIQYVYJSQPM2WIZX"},{"address":"GDWGKG6HRWEUJODF733QP3XFPC4WSQE422NZ7EHJSIQYVYJSQPM2WIZX"},{"string":"{\"t\":\"sin-lista\"}"},{"u64":"0"},{"u64":"1794519799"}]}

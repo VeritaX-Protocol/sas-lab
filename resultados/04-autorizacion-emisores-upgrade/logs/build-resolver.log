@@ -1,0 +1,30 @@
+ℹ️  CARGO_BUILD_RUSTFLAGS=--remap-path-prefix=/home/sergio/.cargo/registry/src= SOROBAN_SDK_BUILD_SYSTEM_SUPPORTS_SPEC_SHAKING_V2=1 STELLAR_CLI_VERSION=30.0.1 cargo rustc --manifest-path=resolvers/Cargo.toml --crate-type=cdylib --target=wasm32v1-none --release --features=export-issuer-resolver
+   Compiling byteorder v1.5.0
+   Compiling escape-bytes v0.1.1
+   Compiling num-traits v0.2.19
+   Compiling static_assertions v1.1.0
+   Compiling ethnum v1.5.3
+   Compiling stable_deref_trait v1.2.1
+   Compiling data-encoding v2.11.1
+   Compiling stellar-xdr v27.0.0
+   Compiling hash32 v0.3.1
+   Compiling heapless v0.8.0
+   Compiling stellar-strkey v0.0.16
+   Compiling soroban-env-common v27.0.1
+   Compiling soroban-env-guest v27.0.1
+   Compiling soroban-sdk v27.0.6
+   Compiling resolvers v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/04-autorizacion-emisores-upgrade/attestprotocol-emisores/contracts/stellar/resolvers)
+    Finished `release` profile [optimized] target(s) in 7.28s
+ℹ️  Build Summary:
+    Wasm File: /tmp/claude-1000/-home-sergio-Documentos-SMM-VeritaXProtocol/d0da91b0-64c7-4b2a-96ea-8dfb7040f9a0/scratchpad/wres/resolvers.wasm (4190 bytes optimized (original size was 4681 bytes))
+    Wasm Hash: d6fcd27a2bd3b93309a3674bdfc3617bfbb243100baa4912d939866a4406af7e
+    Wasm Size: 4190 bytes optimized (original size was 4681 bytes)
+    Exported Functions: 6 found
+      • init
+      • metadata
+      • onattest
+      • onresolve
+      • onrevoke
+      • set_issuer
+✅ Build Complete
+

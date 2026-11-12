@@ -1,0 +1,342 @@
+diff --git a/contracts/stellar/protocol/Cargo.toml b/contracts/stellar/protocol/Cargo.toml
+index a622cd2..451b6a2 100644
+--- a/contracts/stellar/protocol/Cargo.toml
++++ b/contracts/stellar/protocol/Cargo.toml
+@@ -11,6 +11,8 @@ crate-type = ["cdylib", "rlib"]
+ 
+ [features]
+ testutils = []
++# Lab 04: v2 = admin puede revocar y version() devuelve 2 (cambio visible para el ensayo de upgrade)
++v2 = []
+ 
+ [dependencies]
+ soroban-sdk = { workspace = true }
+diff --git a/contracts/stellar/protocol/src/errors.rs b/contracts/stellar/protocol/src/errors.rs
+index 71ae0e8..40a61d2 100644
+--- a/contracts/stellar/protocol/src/errors.rs
++++ b/contracts/stellar/protocol/src/errors.rs
+@@ -56,4 +56,6 @@ pub enum Error {
+     /// missing record from a terminal record.
+     /// Source: HAL-08 (Halborn §7.8)
+     AlreadyRevoked = 29,
++    /// Lab 04: el schema tiene lista de emisores y el atestador no está activo en ella.
++    IssuerNotActive = 30,
+ }
+diff --git a/contracts/stellar/protocol/src/instructions/attestation.rs b/contracts/stellar/protocol/src/instructions/attestation.rs
+index 0831857..8479e86 100644
+--- a/contracts/stellar/protocol/src/instructions/attestation.rs
++++ b/contracts/stellar/protocol/src/instructions/attestation.rs
+@@ -152,6 +152,9 @@ pub fn attest(
+     // Verify schema exists and get resolver info
+     let schema = utils::get_schema(env, &schema_uid).ok_or(Error::SchemaNotFound)?;
+ 
++    // Lab 04: si el schema tiene lista de emisores, el atestador debe estar activo.
++    crate::issuers::check_attest(env, &schema_uid, &attester)?;
++
+     // Get next nonce for this attester
+     let nonce = utils::get_next_nonce(env, &attester);
+ 
+@@ -214,6 +217,11 @@ pub fn attest(
+     let new_nonce = nonce.checked_add(1).ok_or(Error::IntegerOverflow)?;
+     env.storage().persistent().set(&nonce_key, &new_nonce);
+ 
++    // Lab 02: mantener vivos la attestation, el nonce y la instancia (donde viven los schemas).
++    utils::bump_persistent(env, &attest_uid_key);
++    utils::bump_persistent(env, &nonce_key);
++    utils::bump_instance(env);
++
+     // ═══════════════════════════════════════════════════════════════════════════
+     // ► RESOLVER INTEGRATION: After Attest Hook
+     // ═══════════════════════════════════════════════════════════════════════════
+@@ -296,7 +304,9 @@ pub fn revoke_attestation(env: &Env, revoker: Address, attestation_uid: BytesN<3
+         .ok_or(Error::AttestationNotFound)?;
+ 
+     // Verify the revoker is the original attester
+-    if attestation.attester != revoker {
++    // Lab 04 (v2): el admin también puede revocar (llave de emisor perdida). Riesgo: una llave de admin robada revoca todo.
++    let admin_puede = cfg!(feature = "v2") && crate::issuers::is_admin(env, &revoker);
++    if attestation.attester != revoker && !admin_puede {
+         return Err(Error::NotAuthorized);
+     }
+ 
+diff --git a/contracts/stellar/protocol/src/instructions/schema.rs b/contracts/stellar/protocol/src/instructions/schema.rs
+index 932639c..03bf03f 100644
+--- a/contracts/stellar/protocol/src/instructions/schema.rs
++++ b/contracts/stellar/protocol/src/instructions/schema.rs
+@@ -104,6 +104,7 @@ pub fn register_schema(
+         revocable,
+     };
+     env.storage().instance().set(&schema_key, &schema);
++    utils::bump_instance(env); // Lab 02: la instancia contiene todos los schemas
+ 
+     // Publish schema registration event (M-CONTRACT-1: drop redundant trailing authority)
+     events::schema_registered(env, &schema_uid, &schema);
+diff --git a/contracts/stellar/protocol/src/issuers.rs b/contracts/stellar/protocol/src/issuers.rs
+new file mode 100644
+index 0000000..70ae9b0
+--- /dev/null
++++ b/contracts/stellar/protocol/src/issuers.rs
+@@ -0,0 +1,65 @@
++//! Lab 04: lista de emisores por schema, en el núcleo. Prototipo para medir, no el contrato del sprint.
++//! Un schema con lista (aunque todos estén retirados) está restringido; sin lista, se comporta como el original.
++use crate::errors::Error;
++use crate::state::{DataKey, IssuerStatus};
++use crate::utils;
++use soroban_sdk::{Address, BytesN, Env, Vec};
++
++pub fn is_admin(env: &Env, a: &Address) -> bool {
++    env.storage().instance().get::<DataKey, Address>(&DataKey::Admin).map_or(false, |x| &x == a)
++}
++
++pub fn status(env: &Env, schema_uid: &BytesN<32>, issuer: &Address) -> IssuerStatus {
++    env.storage().persistent().get(&DataKey::Issuer(schema_uid.clone(), issuer.clone())).unwrap_or(IssuerStatus::NotListed)
++}
++
++/// Solo `admin` o la autoridad del schema cambian la lista.
++fn gestionar(env: &Env, caller: &Address, schema_uid: &BytesN<32>) -> Result<(), Error> {
++    caller.require_auth();
++    let schema = utils::get_schema(env, schema_uid).ok_or(Error::SchemaNotFound)?;
++    if &schema.authority != caller && !is_admin(env, caller) {
++        return Err(Error::NotAuthorized);
++    }
++    Ok(())
++}
++
++pub fn add(env: &Env, caller: Address, schema_uid: BytesN<32>, issuer: Address) -> Result<(), Error> {
++    gestionar(env, &caller, &schema_uid)?;
++    let lista_key = DataKey::IssuerList(schema_uid.clone());
++    let mut lista: Vec<Address> = env.storage().persistent().get(&lista_key).unwrap_or(Vec::new(env));
++    if status(env, &schema_uid, &issuer) == IssuerStatus::NotListed {
++        lista.push_back(issuer.clone());
++    }
++    let key = DataKey::Issuer(schema_uid, issuer);
++    env.storage().persistent().set(&key, &IssuerStatus::Active);
++    env.storage().persistent().set(&lista_key, &lista);
++    utils::bump_persistent(env, &key);
++    utils::bump_persistent(env, &lista_key);
++    Ok(())
++}
++
++pub fn retire(env: &Env, caller: Address, schema_uid: BytesN<32>, issuer: Address) -> Result<(), Error> {
++    gestionar(env, &caller, &schema_uid)?;
++    if status(env, &schema_uid, &issuer) == IssuerStatus::NotListed {
++        return Err(Error::NotAuthorized);
++    }
++    let key = DataKey::Issuer(schema_uid, issuer);
++    env.storage().persistent().set(&key, &IssuerStatus::Retired);
++    utils::bump_persistent(env, &key);
++    Ok(())
++}
++
++pub fn list(env: &Env, schema_uid: &BytesN<32>) -> Vec<Address> {
++    env.storage().persistent().get(&DataKey::IssuerList(schema_uid.clone())).unwrap_or(Vec::new(env))
++}
++
++/// Llamado desde `attest`: restringe solo si el schema tiene lista.
++pub fn check_attest(env: &Env, schema_uid: &BytesN<32>, attester: &Address) -> Result<(), Error> {
++    if !env.storage().persistent().has(&DataKey::IssuerList(schema_uid.clone())) {
++        return Ok(());
++    }
++    if status(env, schema_uid, attester) != IssuerStatus::Active {
++        return Err(Error::IssuerNotActive);
++    }
++    Ok(())
++}
+diff --git a/contracts/stellar/protocol/src/lib.rs b/contracts/stellar/protocol/src/lib.rs
+index 669f1fb..50b0ffe 100644
+--- a/contracts/stellar/protocol/src/lib.rs
++++ b/contracts/stellar/protocol/src/lib.rs
+@@ -5,6 +5,7 @@ use soroban_sdk::{contract, contractimpl, Address, Bytes, BytesN, Env, String};
+ pub mod errors;
+ pub mod events;
+ pub mod instructions;
++pub mod issuers;
+ pub mod interfaces;
+ pub mod state;
+ pub mod utils;
+@@ -210,6 +211,53 @@ impl AttestationContract {
+     /// # Returns
+     ///
+     /// Returns the next expected nonce (`u64`) for the given attester.
++    /// Lab 02: cualquiera puede renovar el TTL de una attestation (y de la instancia) pagando la renta.
++    /// No cambia datos ni requiere autorización: solo gasta la tarifa de quien llama.
++    pub fn extend_attestation_ttl(env: Env, attestation_uid: BytesN<32>) -> Result<(), errors::Error> {
++        let key = state::DataKey::AttestationUID(attestation_uid);
++        if !env.storage().persistent().has(&key) {
++            return Err(errors::Error::AttestationNotFound);
++        }
++        utils::bump_persistent(&env, &key);
++        utils::bump_instance(&env);
++        Ok(())
++    }
++
++    /// Lab 04: añade (o reactiva) un emisor en un schema. Solo admin o la autoridad del schema.
++    pub fn add_issuer(env: Env, caller: Address, schema_uid: BytesN<32>, issuer: Address) -> Result<(), errors::Error> {
++        issuers::add(&env, caller, schema_uid, issuer)
++    }
++
++    /// Lab 04: retira un emisor. No emite más; sus certificados anteriores siguen válidos.
++    pub fn retire_issuer(env: Env, caller: Address, schema_uid: BytesN<32>, issuer: Address) -> Result<(), errors::Error> {
++        issuers::retire(&env, caller, schema_uid, issuer)
++    }
++
++    pub fn is_active_issuer(env: Env, schema_uid: BytesN<32>, issuer: Address) -> bool {
++        issuers::status(&env, &schema_uid, &issuer) == state::IssuerStatus::Active
++    }
++
++    pub fn issuer_status(env: Env, schema_uid: BytesN<32>, issuer: Address) -> state::IssuerStatus {
++        issuers::status(&env, &schema_uid, &issuer)
++    }
++
++    pub fn list_issuers(env: Env, schema_uid: BytesN<32>) -> soroban_sdk::Vec<Address> {
++        issuers::list(&env, &schema_uid)
++    }
++
++    /// Lab 04: reemplaza el Wasm conservando el estado. Solo `admin`.
++    pub fn upgrade(env: Env, new_wasm_hash: BytesN<32>) -> Result<(), errors::Error> {
++        let admin: Address = env.storage().instance().get(&DataKey::Admin).ok_or(errors::Error::AdminNotSet)?;
++        admin.require_auth();
++        env.deployer().update_current_contract_wasm(new_wasm_hash);
++        Ok(())
++    }
++
++    /// Lab 04: versión visible del código desplegado.
++    pub fn version(_env: Env) -> u32 {
++        if cfg!(feature = "v2") { 2 } else { 1 }
++    }
++
+     pub fn get_attester_nonce(env: Env, attester: Address) -> u64 {
+         utils::get_next_nonce(&env, &attester)
+     }
+diff --git a/contracts/stellar/protocol/src/state.rs b/contracts/stellar/protocol/src/state.rs
+index 7dcb76b..5c31f6c 100644
+--- a/contracts/stellar/protocol/src/state.rs
++++ b/contracts/stellar/protocol/src/state.rs
+@@ -34,6 +34,19 @@ pub enum DataKey {
+     /// N never requires the attester's current nonce.
+     /// Source: C-CONTRACT-1 (independent audit), extends HAL-03 (Halborn §7.3).
+     RevokerNonce(Address),
++    /// Lab 04: estado de un emisor en un schema.
++    Issuer(BytesN<32>, Address),
++    /// Lab 04: lista de emisores de un schema (existir = el schema está restringido).
++    IssuerList(BytesN<32>),
++}
++
++/// Lab 04: estado de un emisor dentro de un schema.
++#[contracttype]
++#[derive(Clone, Copy, Debug, PartialEq)]
++pub enum IssuerStatus {
++    NotListed,
++    Active,
++    Retired,
+ }
+ 
+ /// ╔══════════════════════════════════════════════════════════════════════════╗
+diff --git a/contracts/stellar/protocol/src/utils.rs b/contracts/stellar/protocol/src/utils.rs
+index 9b0ec79..760adb0 100644
+--- a/contracts/stellar/protocol/src/utils.rs
++++ b/contracts/stellar/protocol/src/utils.rs
+@@ -1,6 +1,20 @@
+ use crate::state::{Authority, DataKey, Schema};
+ use soroban_sdk::xdr::ToXdr;
+-use soroban_sdk::{Address, Bytes, BytesN, Env, String};
++use soroban_sdk::{Address, Bytes, BytesN, Env, IntoVal, String, Val};
++
++/// Renueva cuando quedan menos de 30 días (518.400 ledgers a 5 s).
++pub const TTL_THRESHOLD: u32 = 518_400;
++/// Renueva hasta ~180 días (3.110.000 ledgers), por debajo del máximo de red (3.110.400).
++/// shortcut: valores fijos para el laboratorio; en producción deben salir de la configuración de la red.
++pub const TTL_EXTEND_TO: u32 = 3_110_000;
++
++pub fn bump_persistent<K: IntoVal<Env, Val>>(env: &Env, key: &K) {
++    env.storage().persistent().extend_ttl(key, TTL_THRESHOLD, TTL_EXTEND_TO);
++}
++
++pub fn bump_instance(env: &Env) {
++    env.storage().instance().extend_ttl(TTL_THRESHOLD, TTL_EXTEND_TO);
++}
+ 
+ ////////////////////////////////////////////////////////////////////////////////////
+ /// Generates a unique identifier (SHA256 hash) for a schema.
+diff --git a/contracts/stellar/resolvers/Cargo.toml b/contracts/stellar/resolvers/Cargo.toml
+index 456c5e2..243bced 100644
+--- a/contracts/stellar/resolvers/Cargo.toml
++++ b/contracts/stellar/resolvers/Cargo.toml
+@@ -19,6 +19,7 @@ doctest = false
+ [features]
+ default = []
+ export-default-resolver = []
++export-issuer-resolver = []
+ 
+ [dependencies]
+ soroban-sdk = { workspace = true }
+diff --git a/contracts/stellar/resolvers/src/issuers.rs b/contracts/stellar/resolvers/src/issuers.rs
+new file mode 100644
+index 0000000..0cd8c3b
+--- /dev/null
++++ b/contracts/stellar/resolvers/src/issuers.rs
+@@ -0,0 +1,50 @@
++//! Lab 04: resolver con lista de emisores por schema (alternativa a ponerla en el núcleo).
++//! Prototipo para medir costo y tamaño de Wasm. `onattest` solo deja pasar a emisores activos.
++use crate::interface::{ResolverAttestationData, ResolverError, ResolverInterface, ResolverMetadata, ResolverType};
++use soroban_sdk::{contract, contractimpl, contracttype, Address, BytesN, Env, String};
++
++#[contracttype]
++pub enum K {
++    Admin,
++    Emisor(BytesN<32>, Address),
++}
++
++#[contract]
++pub struct IssuerResolver;
++
++const TTL: u32 = 3_110_000;
++
++#[contractimpl]
++impl IssuerResolver {
++    pub fn init(env: Env, admin: Address) {
++        if env.storage().instance().has(&K::Admin) { panic!("ya iniciado") }
++        admin.require_auth();
++        env.storage().instance().set(&K::Admin, &admin);
++    }
++    pub fn set_issuer(env: Env, schema_uid: BytesN<32>, issuer: Address, activo: bool) {
++        let admin: Address = env.storage().instance().get(&K::Admin).unwrap();
++        admin.require_auth();
++        let k = K::Emisor(schema_uid, issuer);
++        env.storage().persistent().set(&k, &activo);
++        env.storage().persistent().extend_ttl(&k, TTL / 6, TTL);
++        env.storage().instance().extend_ttl(TTL / 6, TTL);
++    }
++}
++
++#[contractimpl]
++impl ResolverInterface for IssuerResolver {
++    fn onattest(env: Env, a: ResolverAttestationData) -> Result<bool, ResolverError> {
++        let activo: bool = env.storage().persistent().get(&K::Emisor(a.schema_uid, a.attester)).unwrap_or(false);
++        Ok(activo)
++    }
++    fn onresolve(_env: Env, _uid: BytesN<32>, _attester: Address) -> Result<(), ResolverError> { Ok(()) }
++    fn onrevoke(_env: Env, _a: ResolverAttestationData) -> Result<bool, ResolverError> { Ok(true) }
++    fn metadata(env: Env) -> ResolverMetadata {
++        ResolverMetadata {
++            name: String::from_str(&env, "Issuer Resolver"),
++            version: String::from_str(&env, "lab04"),
++            description: String::from_str(&env, "Lista de emisores por schema"),
++            resolver_type: ResolverType::Custom,
++        }
++    }
++}
+diff --git a/contracts/stellar/resolvers/src/lib.rs b/contracts/stellar/resolvers/src/lib.rs
+index 7e0f41e..ee4f41a 100644
+--- a/contracts/stellar/resolvers/src/lib.rs
++++ b/contracts/stellar/resolvers/src/lib.rs
+@@ -52,3 +52,9 @@ pub use interface::{ResolverAttestationData, ResolverError, ResolverInterface, R
+ /// Re-export the DefaultResolver implementation when available.
+ #[cfg(any(not(target_arch = "wasm32"), feature = "export-default-resolver"))]
+ pub use default::DefaultResolver;
++
++/// Lab 04: resolver con lista de emisores.
++#[cfg(any(not(target_arch = "wasm32"), feature = "export-issuer-resolver"))]
++pub mod issuers;
++#[cfg(any(not(target_arch = "wasm32"), feature = "export-issuer-resolver"))]
++pub use issuers::IssuerResolver;

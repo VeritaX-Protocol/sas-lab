@@ -1,0 +1,36 @@
+
+[1m== 3. Testnet: v1 con lista de emisores, retirar, upgrade a v2 por admin, v2 lee lo de v1 ==[0m
+contrato v1: CBUG6M3ARCVTLH2RNLZSKKQVJNQHF2QTJ6IC43ZBHRLND25QFDIBXDD7
+31-init: OK fee,ledger=11029 5699226
+32-registrar: OK fee,ledger=428068971 5699228
+-- emisorB emite en un schema SIN lista (comportamiento heredado)
+33-b-sin-lista: OK fee,ledger=1779139 5699231
+-- el admin añade a emisorA; emisorB intenta añadirse solo
+34-b-se-autoañade: ERROR Error(Contract, #6) ❌ error: transaction simulation failed: HostError: Error(Contract, #6)
+35-admin-añade-a: OK fee,ledger=958084 5699235
+36-a-emite: OK fee,ledger=1789527 5699238
+37-b-rechazado: ERROR Error(Contract, #30) ❌ error: transaction simulation failed: HostError: Error(Contract, #30)
+-- retirar a emisorA: ya no emite, pero lo anterior sigue
+38-retira-a: OK fee,ledger=4077 5699241
+39-a-retirado: ERROR Error(Contract, #30) ❌ error: transaction simulation failed: HostError: Error(Contract, #30)
+40-lee-anterior: OK (solo lectura) {"attester":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI","expirati
+41-estado-a: OK (solo lectura) "Retired"
+42-reactiva-a: OK fee,ledger=5675 5699247
+43-lista: OK (solo lectura) ["GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"]
+44-version-v1: OK (solo lectura) 1
+-- instalar v2 y probar quién puede disparar el upgrade
+hash Wasm v2: df6a750077b12d065019012e860bea5a4bacc1f2a72ce857321297651e4bb3b9
+51-upgrade-por-b: ERROR  ❌ error: Missing signing key for account GCOATQG2S4D6WO5MQX3OSXSTHFFEOLUI7TFTWFJJQMXRORN55XQYL6Q6
+52-version-sigue-1: OK (solo lectura) 1
+53-upgrade-admin: OK fee,ledger=4015 5699254
+54-version-v2: OK (solo lectura) 2
+-- v2 lee lo de v1, conserva la lista y no renumera errores
+55-v2-lee-att1: OK (solo lectura) {"attester":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI","expirati
+56-v2-estado-b: OK (solo lectura) "NotListed"
+57-v2-b-rechazado: ERROR Error(Contract, #30) ❌ error: transaction simulation failed: HostError: Error(Contract, #30)
+58-v2-a-emite: OK fee,ledger=429904099 5699258
+-- quién puede revocar en v2
+59-b-revoca: ERROR Error(Contract, #6) ❌ error: transaction simulation failed: HostError: Error(Contract, #6)
+60-admin-revoca: OK fee,ledger=24645 5699260
+61-lee-revocada: OK (solo lectura) {"attester":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI","expirati
+62-a-revoca-la-suya: OK fee,ledger=24638 5699263

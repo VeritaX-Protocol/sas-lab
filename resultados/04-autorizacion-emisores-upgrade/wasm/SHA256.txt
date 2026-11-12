@@ -1,0 +1,3 @@
+27e653f3341cefeeccd3d0a30f085bc62e2bccb6e8079facede0401be64a27fd  protocol-v1.wasm
+df6a750077b12d065019012e860bea5a4bacc1f2a72ce857321297651e4bb3b9  protocol-v2.wasm
+d6fcd27a2bd3b93309a3674bdfc3617bfbb243100baa4912d939866a4406af7e  resolver-emisores.wasm

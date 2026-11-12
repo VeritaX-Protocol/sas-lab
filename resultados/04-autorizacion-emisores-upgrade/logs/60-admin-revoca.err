@@ -1,0 +1,6 @@
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: 886063a47406c7b13097d05f239f731d82f583dffa5f2725a61904bb433ce9b5
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/886063a47406c7b13097d05f239f731d82f583dffa5f2725a61904bb433ce9b5
+📅 CBUG6M3ARCVTLH2RNLZSKKQVJNQHF2QTJ6IC43ZBHRLND25QFDIBXDD7 - Success - Event: [{"symbol":"ATTEST"},{"symbol":"REVOKE"}] = {"vec":[{"bytes":"e691baa66d0a09dea365b71c3d19fc6fe22e69e58a039cec8371fbbcc66e8144"},{"bytes":"ef00f224b91b1a41545ae9ac9349bc8fb28cdd06f126feb436fce9df65fb06b8"},{"address":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"},{"address":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"},{"bool":true},{"u64":"1794519944"}]}

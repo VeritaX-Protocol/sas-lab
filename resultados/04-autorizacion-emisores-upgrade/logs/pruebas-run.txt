@@ -1,0 +1,7 @@
+
+[1m== 1. Pruebas Rust (mock_auths) en v1, en v2 y suite completa ==[0m
+v1: test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+v2: test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+suite v1: pasan 88 fallan 0
+suite v2: pasan 87 fallan 1
+FIN

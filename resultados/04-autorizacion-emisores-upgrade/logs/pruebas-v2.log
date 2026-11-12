@@ -1,0 +1,42 @@
+   Compiling protocol v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/04-autorizacion-emisores-upgrade/attestprotocol-emisores/contracts/stellar/protocol)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.48s
+     Running tests/lab_emisores.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/lab_emisores-4015c49cd7102328)
+
+running 9 tests
+test a1_mock_auths_exige_la_firma_correcta_y_queda_registrada ... AUTHS_A n=1 firmante_es_A=true fn=attest
+AUTH_B_POR_A error=Some(Err(Abort))
+SIN_FIRMA error=Some(Err(Abort))
+Writing test snapshot file for test "a1_mock_auths_exige_la_firma_correcta_y_queda_registrada" to "test_snapshots/a1_mock_auths_exige_la_firma_correcta_y_queda_registrada.1.json".
+ok
+test a2_en_el_contrato_heredado_emisorb_puede_emitir ... HALLAZGO emisorB emite sin lista: si
+Writing test snapshot file for test "a2_en_el_contrato_heredado_emisorb_puede_emitir" to "test_snapshots/a2_en_el_contrato_heredado_emisorb_puede_emitir.1.json".
+ok
+test a3_initialize_dos_veces_y_secuestro_por_un_tercero ... INIT_SECUESTRO intruso_primero=ok admin_legitimo=Some(Ok(AlreadyInitialized))
+Writing test snapshot file for test "a3_initialize_dos_veces_y_secuestro_por_un_tercero" to "test_snapshots/a3_initialize_dos_veces_y_secuestro_por_un_tercero.1.json".
+ok
+test b1_lista_en_el_nucleo_activo_emite_inactivo_no_y_retirado_conserva_certificados ... B_RECHAZADO IssuerNotActive
+RETIRADO_CONSERVA revoked=false attester_es_A=true
+Writing test snapshot file for test "b1_lista_en_el_nucleo_activo_emite_inactivo_no_y_retirado_conserva_certificados" to "test_snapshots/b1_lista_en_el_nucleo_activo_emite_inactivo_no_y_retirado_conserva_certificados.1.json".
+ok
+test b2_quien_puede_cambiar_la_lista ... TERCERO_ADD Some(Ok(NotAuthorized))
+Writing test snapshot file for test "b2_quien_puede_cambiar_la_lista" to "test_snapshots/b2_quien_puede_cambiar_la_lista.1.json".
+ok
+test c1_quien_puede_revocar ... ADMIN_REVOCA v2 ok=true
+Writing test snapshot file for test "c1_quien_puede_revocar" to "test_snapshots/c1_quien_puede_revocar.1.json".
+ok
+test d1_solo_admin_puede_disparar_el_upgrade ... UPGRADE_POR_B error=Some(Err(Abort))
+Writing test snapshot file for test "d1_solo_admin_puede_disparar_el_upgrade" to "test_snapshots/d1_solo_admin_puede_disparar_el_upgrade.1.json".
+ok
+test d3_cambiar_un_tipo_guardado_exige_migracion ... MIGRACION mismo_tipo=true campo_nuevo_obligatorio=false campo_nuevo_Option=false
+Writing test snapshot file for test "d3_cambiar_un_tipo_guardado_exige_migracion" to "test_snapshots/d3_cambiar_un_tipo_guardado_exige_migracion.1.json".
+ok
+test e1_costo_de_attest_nucleo_frente_a_resolver ... Writing test snapshot file for test "e1_costo_de_attest_nucleo_frente_a_resolver" to "test_snapshots/e1_costo_de_attest_nucleo_frente_a_resolver.1.json".
+Writing test snapshot file for test "e1_costo_de_attest_nucleo_frente_a_resolver" to "test_snapshots/e1_costo_de_attest_nucleo_frente_a_resolver.2.json".
+Writing test snapshot file for test "e1_costo_de_attest_nucleo_frente_a_resolver" to "test_snapshots/e1_costo_de_attest_nucleo_frente_a_resolver.3.json".
+COSTO base_sin_lista instr=172826 mem=26228 write=760 read=0
+COSTO lista_en_nucleo instr=190265 mem=28574 write=760 read=0
+COSTO resolver_aparte instr=279349 mem=47564 write=760 read=0
+ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+

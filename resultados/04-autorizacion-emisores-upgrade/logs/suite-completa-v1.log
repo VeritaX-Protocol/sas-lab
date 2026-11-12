@@ -1,0 +1,321 @@
+   Compiling resolvers v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/04-autorizacion-emisores-upgrade/attestprotocol-emisores/contracts/stellar/resolvers)
+   Compiling protocol v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/04-autorizacion-emisores-upgrade/attestprotocol-emisores/contracts/stellar/protocol)
+warning: unused import: `Events`
+ --> protocol/tests/protocol_initialization_and_schema.rs:5:31
+  |
+5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+  |                               ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `group_one_generator` is never used
+  --> protocol/tests/testutils.rs:61:8
+   |
+61 | pub fn group_one_generator() -> G1Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `group_two_generator` is never used
+  --> protocol/tests/testutils.rs:65:8
+   |
+65 | pub fn group_two_generator() -> G2Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `all_events` is never used
+   --> protocol/tests/testutils.rs:182:8
+    |
+182 | pub fn all_events(env: &Env) -> soroban_sdk::Vec<(Address, soroban_sdk::Vec<soroban_sdk::Val>, soroban_sdk::Val)> {
+    |        ^^^^^^^^^^
+
+warning: unused import: `Events`
+  --> protocol/tests/protocol_cryptography_test.rs:51:31
+   |
+51 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Events`
+ --> protocol/tests/protocol_revocation_test.rs:5:31
+  |
+5 |     testutils::{Address as _, Events, MockAuth, MockAuthInvoke},
+  |                               ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_G2_PUBLIC_KEY` is never used
+  --> protocol/tests/testutils.rs:21:11
+   |
+21 | pub const TEST_BLS_G2_PUBLIC_KEY: [u8; 192] = [
+   |           ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `TEST_BLS_PRIVATE_KEY` is never used
+  --> protocol/tests/testutils.rs:32:11
+   |
+32 | pub const TEST_BLS_PRIVATE_KEY: [u8; 32] = [
+   |           ^^^^^^^^^^^^^^^^^^^^
+
+warning: function `group_one_generator` is never used
+  --> protocol/tests/testutils.rs:61:8
+   |
+61 | pub fn group_one_generator() -> G1Affine {
+   |        ^^^^^^^^^^^^^^^^^^^
+
+warning: function `create_delegated_attestation_request` is never used
+  --> protocol/tests/testutils.rs:75:8
+   |
+75 | pub fn create_delegated_attestation_request(
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:148:9
+    |
+148 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:231:9
+    |
+231 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+
+warning: unused variable: `subject`
+   --> protocol/tests/protocol_cryptography_test.rs:344:9
+    |
+344 |     let subject = Address::generate(&env);
+    |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_subject`
+
+warning: unused import: `Events`
+  --> protocol/tests/events_regression.rs:18:31
+   |
+18 |     testutils::{Address as _, Events, Ledger as _},
+   |                               ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `errors::Error`
+ --> protocol/tests/protocol_attestation_test.rs:3:5
+  |
+3 |     errors::Error,
+  |     ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `Events`
+  --> protocol/tests/protocol_attestation_test.rs:14:31
+   |
+14 |     testutils::{Address as _, Events, Ledger, LedgerInfo, MockAuth, MockAuthInvoke},
+   |                               ^^^^^^
+
+warning: `protocol` (test "protocol_revoke_error_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "resolver_abi") generated 3 warnings
+warning: `protocol` (test "events_regression") generated 6 warnings (5 duplicates) (run `cargo fix --test "events_regression" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_resolver_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_initialization_and_schema") generated 6 warnings (1 duplicate) (run `cargo fix --test "protocol_initialization_and_schema" -p protocol` to apply 1 suggestion)
+warning: `protocol` (test "protocol_cryptography_test") generated 4 warnings (run `cargo fix --test "protocol_cryptography_test" -p protocol` to apply 4 suggestions)
+warning: `protocol` (test "protocol_attestation_test") generated 7 warnings (5 duplicates) (run `cargo fix --test "protocol_attestation_test" -p protocol` to apply 2 suggestions)
+warning: `protocol` (test "protocol_delegation_test") generated 3 warnings (3 duplicates)
+warning: `protocol` (test "protocol_revocation_test") generated 6 warnings (5 duplicates) (run `cargo fix --test "protocol_revocation_test" -p protocol` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.03s
+     Running unittests src/lib.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol-c688ee012cad06a6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/__protocol_bls_gaffine_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/__protocol_bls_gaffine_test-438731e680247140)
+
+running 3 tests
+test cross_check_g2_generator_between_crates ... ok
+test generate_and_log_bls_test_vectors_with_blst ... ok
+test dump_and_verify_g2_generator ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/events_regression.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/events_regression-93105e15e0f13e7a)
+
+running 2 tests
+test test_attest_create_event_includes_schema_uid ... ok
+test test_schema_register_event_has_no_redundant_authority ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/lab_emisores.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/lab_emisores-c9f425b763843c18)
+
+running 9 tests
+test a3_initialize_dos_veces_y_secuestro_por_un_tercero ... ok
+test d3_cambiar_un_tipo_guardado_exige_migracion ... ok
+test d1_solo_admin_puede_disparar_el_upgrade ... ok
+test a2_en_el_contrato_heredado_emisorb_puede_emitir ... ok
+test a1_mock_auths_exige_la_firma_correcta_y_queda_registrada ... ok
+test b2_quien_puede_cambiar_la_lista ... ok
+test c1_quien_puede_revocar ... ok
+test b1_lista_en_el_nucleo_activo_emite_inactivo_no_y_retirado_conserva_certificados ... ok
+test e1_costo_de_attest_nucleo_frente_a_resolver ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/protocol_attestation_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_attestation_test-b72303d90913a6cd)
+
+running 9 tests
+test test_generate_compatible_attestation_uid ... ok
+test test_attesting_with_unregistered_schema ... ok
+test test_querying_non_existent_attestation ... ok
+test test_attest_with_past_expiration_fails ... ok
+test create_and_get_attestation ... ok
+test test_can_revoke_non_revocable_schema ... ok
+test test_handling_expired_attestations ... ok
+test test_attestation_and_expiration ... ok
+test test_multiple_attestations_for_same_subject_and_schema ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/protocol_cryptography_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_cryptography_test-e1b4c3bd51f5ef7c)
+
+running 19 tests
+test generate_valid_bls_constants ... ok
+test test_clean_room_revocation_message_hash ... ok
+test test_clean_room_attestation_message_hash ... ok
+test test_hal07_compressed_pubkey_flag_returns_error_not_trap ... ok
+test test_hal07_infinity_pubkey_flag_returns_error_not_trap ... ok
+test test_delegated_action_with_unregistered_key ... ok
+test test_bls_key_registration_and_event ... ok
+test test_valid_points ... ok
+test test_hal07_off_curve_pubkey_returns_invalid_point ... ok
+test test_hal07_all_zeros_signature_returns_invalid_point ... ok
+test test_hal07_compressed_signature_flag_returns_error_not_trap ... ok
+test test_hal07_off_curve_signature_returns_invalid_point ... ok
+test test_nonce_incrementation ... ok
+test test_nonce_is_attester_specific ... ok
+test test_hal07_infinity_signature_flag_returns_error_not_trap ... ok
+test test_end_to_end_bls_signature_verification ... ok
+test test_delegated_attestation_with_valid_signature ... ok
+test test_hal07_valid_signature_passes_structural_check ... ok
+test test_nonce_replay_future_nonce_rejection ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.57s
+
+     Running tests/protocol_delegation_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_delegation_test-f760740dfcc42e88)
+
+running 14 tests
+test test_hal01_uid_reference_vector_for_w5 ... ok
+test test_hal05_expired_expiration_time_rejected ... ok
+test test_hal05_valid_expiration_time_accepted ... ok
+test test_hal01_duplicate_uid_guard_blocks_overwrite ... ok
+test test_h_contract4_subject_mismatch_in_delegated_revoke_rejected ... ok
+test test_hal01_two_attesters_same_subject_nonce_no_collision ... ok
+test test_nonce_is_scoped_to_attester_not_subject ... ok
+test test_c_contract1_out_of_order_revoker_nonce_rejected ... ok
+test test_delegated_action_with_expired_deadline ... ok
+test test_delegated_revocation_with_valid_signature ... ok
+test test_h_contract4_correct_subject_revoke_succeeds ... ok
+test test_nonce_is_scoped_to_attester_not_submitter ... ok
+test test_hal03_delegated_revoke_replay_blocked_by_nonce ... ok
+test test_c_contract1_revoker_nonce_increments_after_success ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running tests/protocol_initialization_and_schema.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_initialization_and_schema-020bcd1c0c36397c)
+
+running 3 tests
+test test_duplicate_schema_registration_fails ... ok
+test test_same_definition_different_authority_succeeds ... ok
+test initialize_and_register_schema ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/protocol_resolver_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_resolver_test-c7c929bf92de659b)
+
+running 8 tests
+test test_resolver_onresolve_hook_called ... ok
+test test_resolver_rejection_of_revocation ... ok
+test test_schema_without_resolver ... ok
+test test_schema_with_resolver_allows_attestation ... ok
+test test_resolver_onresolve_hook_called_after_revocation ... ok
+test test_multiple_schemas_with_different_resolvers ... ok
+test test_hal02_delegated_attest_calls_resolver_onattest ... ok
+test test_hal02_delegated_revoke_rejected_when_resolver_says_no ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/protocol_revocation_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_revocation_test-db778818fa099aaf)
+
+running 5 tests
+test test_revoking_non_existent_attestation_fails ... ok
+test test_cannot_revoke_from_non_revocable_schema ... ok
+test revoke_by_nonce ... ok
+test test_double_revocation_fails ... ok
+test test_revocation_by_unauthorized_parties ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/protocol_revoke_error_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_revoke_error_test-c85bb561f3c0ce06)
+
+running 2 tests
+test test_hal08_already_revoked_returns_correct_error ... ok
+test test_hal08_delegated_already_revoked_returns_correct_error ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/protocol_schema_uid_test.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/protocol_schema_uid_test-88203ae66d48a394)
+
+running 3 tests
+test test_c_contract3_schema_uid_differs_by_revocable_flag ... ok
+test test_c_contract3_schema_uid_reference_vector_for_w5 ... ok
+test test_c_contract3_registration_collision_blocked_for_same_definition_diff_revocable ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/resolver_abi.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/resolver_abi-0af6728d67e09e44)
+
+running 4 tests
+test test_resolver_abi_onattest_roundtrip ... ok
+test test_resolver_abi_onresolve_roundtrip ... ok
+test test_resolver_abi_onrevoke_roundtrip ... ok
+test test_delegated_attest_with_default_resolver_succeeds ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/testutils.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/testutils-eba1e2f74a0f2c0f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/resolvers-fc0ea66a5c5f6a76)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/default_resolver.rs (/home/sergio/.cache/sas-lab/t04/debug/deps/default_resolver-accbe654de05b14e)
+
+running 7 tests
+test test_revocation_hooks ... ok
+test test_metadata ... ok
+test test_allow_revocable_attestation_revocation ... ok
+test test_accept_valid_attestation ... ok
+test test_reject_self_attestation ... ok
+test test_reject_non_revocable_attestation_revocation ... ok
+test test_reject_expired_attestation ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests protocol
+
+running 7 tests
+test protocol/src/instructions/delegation.rs - instructions::delegation::create_attestation_message (line 405) ... ignored
+test protocol/src/instructions/delegation.rs - instructions::delegation::create_revocation_message (line 518) ... ignored
+test protocol/src/instructions/schema.rs - instructions::schema::register_schema (line 54) ... ignored
+test protocol/src/utils.rs - utils::_get_authority (line 160) ... ignored
+test protocol/src/utils.rs - utils::create_xdr_string (line 226) ... ignored
+test protocol/src/utils.rs - utils::generate_attestation_uid (line 103) ... ignored
+test protocol/src/utils.rs - utils::get_schema (line 182) ... ignored
+
+test result: ok. 0 passed; 0 failed; 7 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
