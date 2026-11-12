@@ -18,7 +18,7 @@ Ejercicios cortos y desechables para entender cómo se comporta **Soroban (Stell
 | 02 | [Almacenamiento y TTL](ejercicios/ejercicio-02-almacenamiento-ttl.md) | ¿Cuánto vive un certificado y cómo evito que se archive? | 1 d | Antes del 16 | Hecho (la restauración real queda para el 2026-11-18) · [resultado](resultados/02-almacenamiento-ttl/) |
 | 03 | [Costos por tamaño](ejercicios/ejercicio-03-costos-tamano.md) | ¿Qué topes iniciales son razonables? | 1 d | Antes del 16 | Hecho · [resultado](resultados/03-costos-tamano/) |
 | 04 | [Autorización, emisores y upgrade](ejercicios/ejercicio-04-autorizacion-emisores-upgrade.md) | ¿Lista de emisores en el núcleo o en un resolver? ¿Cómo actualizo sin perder estado? | 1 d | Puede hacerse en la semana 1 | Hecho · [resultado](resultados/04-autorizacion-emisores-upgrade/) |
-| 99 | [Cierre](ejercicios/99-cierre.md) | ¿Qué decisiones salen para el Entregable 2? | 1–2 h | Al terminar | Pendiente |
+| 99 | [Cierre](ejercicios/99-cierre.md) | ¿Qué decisiones salen para el Entregable 2? | 1–2 h | Al terminar | Hecho · [resultado](resultados/RESUMEN.md) |
 
 **Ruta:** 00 → 01 → 02 → 03 → 04 → 99.
 
