@@ -1,0 +1,38 @@
+{
+  "ledger_actual": 5693420,
+  "cierre_s_supuesto": 5,
+  "entradas": [
+    {
+      "entrada": "instancia del contrato (incluye los schemas)",
+      "existe": true,
+      "liveUntilLedgerSeq": 5802229,
+      "ledgers_restantes": 108809,
+      "dias": 6.3
+    },
+    {
+      "entrada": "código Wasm",
+      "existe": true,
+      "liveUntilLedgerSeq": 5802176,
+      "ledgers_restantes": 108756,
+      "dias": 6.3
+    },
+    {
+      "entrada": "schema (clave propia, solo si estuviera en persistent)",
+      "existe": false
+    },
+    {
+      "entrada": "attestation",
+      "existe": true,
+      "liveUntilLedgerSeq": 6193420,
+      "ledgers_restantes": 500000,
+      "dias": 28.9
+    },
+    {
+      "entrada": "nonce del emisor",
+      "existe": true,
+      "liveUntilLedgerSeq": 5802245,
+      "ledgers_restantes": 108825,
+      "dias": 6.3
+    }
+  ]
+}

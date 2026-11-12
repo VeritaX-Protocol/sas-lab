@@ -1,0 +1,10 @@
+ℹ️  Uploading contract WASM…
+ℹ️  Skipping install because wasm already installed
+ℹ️  Deploying contract using wasm hash a3b2dfce05d3840f7f872766b8426035c08c769e1d5496a64b556b5eff97fc5a
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: 32e9440f92c17af4bf373c081a7ecf339d5b7dbf1c91d69aead413e0db21f203
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/32e9440f92c17af4bf373c081a7ecf339d5b7dbf1c91d69aead413e0db21f203
+🔗 https://lab.stellar.org/r/testnet/contract/CCSA72BDY5QVDX5ULDRFAXYNULJXPTTSWJ3J7EQM5S6AYLW74D55NZJM
+✅ Deployed!

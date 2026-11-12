@@ -1,0 +1,6 @@
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: ff768b8314e45684db3aab4ae622f61afefe300d57725ba7e4b728d076d5d893
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/ff768b8314e45684db3aab4ae622f61afefe300d57725ba7e4b728d076d5d893
+📅 CDEKHAPO3YK5ATOMALYRVXCYBWKBH3OLEUVO3LBA2TCNUREHWAIQLOJI - Success - Event: [{"symbol":"CONTRACT"},{"symbol":"INIT"}] = {"vec":[{"address":"GCOATQG2S4D6WO5MQX3OSXSTHFFEOLUI7TFTWFJJQMXRORN55XQYL6Q6"}]}

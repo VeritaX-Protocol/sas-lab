@@ -1,0 +1,2 @@
+a3b2dfce05d3840f7f872766b8426035c08c769e1d5496a64b556b5eff97fc5a  wasm/protocol-base.wasm
+70c38a7a036f1e18caa6db506a4c78bbecf52a5453458486169444059c60ae59  wasm/protocol-rama.wasm

@@ -1,0 +1,6 @@
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: 4fa8ce08c0bed0f4ea21615c66c210ac7bd107a4c81631f781738076bcf4e7f2
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/4fa8ce08c0bed0f4ea21615c66c210ac7bd107a4c81631f781738076bcf4e7f2
+📅 CDEKHAPO3YK5ATOMALYRVXCYBWKBH3OLEUVO3LBA2TCNUREHWAIQLOJI - Success - Event: [{"symbol":"SCHEMA"},{"symbol":"REGISTER"}] = {"vec":[{"bytes":"06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2"},{"map":[{"key":{"symbol":"authority"},"val":{"address":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"}},{"key":{"symbol":"definition"},"val":{"string":"curso:string,asistio:bool"}},{"key":{"symbol":"resolver"},"val":"void"},{"key":{"symbol":"revocable"},"val":{"bool":true}}]}]}

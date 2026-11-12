@@ -1,0 +1,77 @@
+diff --git a/contracts/stellar/protocol/src/instructions/attestation.rs b/contracts/stellar/protocol/src/instructions/attestation.rs
+index 0831857..773d661 100644
+--- a/contracts/stellar/protocol/src/instructions/attestation.rs
++++ b/contracts/stellar/protocol/src/instructions/attestation.rs
+@@ -214,6 +214,11 @@ pub fn attest(
+     let new_nonce = nonce.checked_add(1).ok_or(Error::IntegerOverflow)?;
+     env.storage().persistent().set(&nonce_key, &new_nonce);
+ 
++    // Lab 02: mantener vivos la attestation, el nonce y la instancia (donde viven los schemas).
++    utils::bump_persistent(env, &attest_uid_key);
++    utils::bump_persistent(env, &nonce_key);
++    utils::bump_instance(env);
++
+     // ═══════════════════════════════════════════════════════════════════════════
+     // ► RESOLVER INTEGRATION: After Attest Hook
+     // ═══════════════════════════════════════════════════════════════════════════
+diff --git a/contracts/stellar/protocol/src/instructions/schema.rs b/contracts/stellar/protocol/src/instructions/schema.rs
+index 932639c..03bf03f 100644
+--- a/contracts/stellar/protocol/src/instructions/schema.rs
++++ b/contracts/stellar/protocol/src/instructions/schema.rs
+@@ -104,6 +104,7 @@ pub fn register_schema(
+         revocable,
+     };
+     env.storage().instance().set(&schema_key, &schema);
++    utils::bump_instance(env); // Lab 02: la instancia contiene todos los schemas
+ 
+     // Publish schema registration event (M-CONTRACT-1: drop redundant trailing authority)
+     events::schema_registered(env, &schema_uid, &schema);
+diff --git a/contracts/stellar/protocol/src/lib.rs b/contracts/stellar/protocol/src/lib.rs
+index 669f1fb..6d1ea13 100644
+--- a/contracts/stellar/protocol/src/lib.rs
++++ b/contracts/stellar/protocol/src/lib.rs
+@@ -210,6 +210,18 @@ impl AttestationContract {
+     /// # Returns
+     ///
+     /// Returns the next expected nonce (`u64`) for the given attester.
++    /// Lab 02: cualquiera puede renovar el TTL de una attestation (y de la instancia) pagando la renta.
++    /// No cambia datos ni requiere autorización: solo gasta la tarifa de quien llama.
++    pub fn extend_attestation_ttl(env: Env, attestation_uid: BytesN<32>) -> Result<(), errors::Error> {
++        let key = state::DataKey::AttestationUID(attestation_uid);
++        if !env.storage().persistent().has(&key) {
++            return Err(errors::Error::AttestationNotFound);
++        }
++        utils::bump_persistent(&env, &key);
++        utils::bump_instance(&env);
++        Ok(())
++    }
++
+     pub fn get_attester_nonce(env: Env, attester: Address) -> u64 {
+         utils::get_next_nonce(&env, &attester)
+     }
+diff --git a/contracts/stellar/protocol/src/utils.rs b/contracts/stellar/protocol/src/utils.rs
+index 9b0ec79..760adb0 100644
+--- a/contracts/stellar/protocol/src/utils.rs
++++ b/contracts/stellar/protocol/src/utils.rs
+@@ -1,6 +1,20 @@
+ use crate::state::{Authority, DataKey, Schema};
+ use soroban_sdk::xdr::ToXdr;
+-use soroban_sdk::{Address, Bytes, BytesN, Env, String};
++use soroban_sdk::{Address, Bytes, BytesN, Env, IntoVal, String, Val};
++
++/// Renueva cuando quedan menos de 30 días (518.400 ledgers a 5 s).
++pub const TTL_THRESHOLD: u32 = 518_400;
++/// Renueva hasta ~180 días (3.110.000 ledgers), por debajo del máximo de red (3.110.400).
++/// shortcut: valores fijos para el laboratorio; en producción deben salir de la configuración de la red.
++pub const TTL_EXTEND_TO: u32 = 3_110_000;
++
++pub fn bump_persistent<K: IntoVal<Env, Val>>(env: &Env, key: &K) {
++    env.storage().persistent().extend_ttl(key, TTL_THRESHOLD, TTL_EXTEND_TO);
++}
++
++pub fn bump_instance(env: &Env) {
++    env.storage().instance().extend_ttl(TTL_THRESHOLD, TTL_EXTEND_TO);
++}
+ 
+ ////////////////////////////////////////////////////////////////////////////////////
+ /// Generates a unique identifier (SHA256 hash) for a schema.
