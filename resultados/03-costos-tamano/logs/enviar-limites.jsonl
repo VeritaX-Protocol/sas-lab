@@ -1,0 +1,7 @@
+{"ledger":5698603,"protocolo":30,"fecha":"2026-11-12T20:51:02.449Z"}
+{"n":16000,"hash":"79b6c8871df32d2683852addb3aab49d8db197c5cedf797dd895e9ab9ac828cb","estado":"SUCCESS","ledger":5698605,"sim_tarifa_recursos":47687395,"sim_min":47687395,"no_reembolsable":82426,"reembolsable":41385850,"renta":41345967}
+{"n":48000,"hash":"3ce3e923488205b09230a5d96922f9f00b4cc498309fed683515ca00bbd67184","estado":"FAILED","msg":"{\"fee_charged\":\"236377\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}
+{"n":65000,"hash":"b50ccb1363f7f3b5ea57568dab7b8f9a63d95112d392ad4a69d7afa90c187530","estado":"FAILED","msg":"{\"fee_charged\":\"318110\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}
+{"n":65536,"hash":"f2404ef507915d41e65436c4883667e89d6a8991c3c3dcf03c31cf477e376734","estado":"FAILED","msg":"{\"fee_charged\":\"320688\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}
+{"n":70000,"fallo":"rechazada al enviar","msg":"{\"fee_charged\":\"203352357\",\"result\":\"tx_soroban_invalid\",\"ext\":\"v0\"}"}
+{"n":130000,"fallo":"rechazada al enviar","msg":"{\"fee_charged\":\"376313315\",\"result\":\"tx_soroban_invalid\",\"ext\":\"v0\"}"}

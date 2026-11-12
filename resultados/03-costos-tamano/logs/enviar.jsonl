@@ -1,0 +1,5 @@
+{"ledger":5698598,"protocolo":30,"fecha":"2026-11-12T20:50:37.865Z"}
+{"n":100,"hash":"1c3f2b5eb865254a22f10712427a68789f859e224c2e5f213359b82ac4641faa","estado":"SUCCESS","ledger":5698600,"sim_tarifa_recursos":1910885,"sim_min":1910885,"no_reembolsable":6081,"reembolsable":1652174,"renta":1651060}
+{"n":300,"hash":"18eaf8e95537077f07522489e44ea363db04e207ca1a5b65e6f97d51617ae066","estado":"SUCCESS","ledger":5698601,"sim_tarifa_recursos":2429688,"sim_min":2429688,"no_reembolsable":6946,"reembolsable":2102555,"renta":2101002}
+{"n":600,"hash":"ef0ec0768c961c1a8c10393d66d74dce60b2a980a1f7ce5ed3cc71a3a46fdafe","estado":"SUCCESS","ledger":5698602,"sim_tarifa_recursos":3294363,"sim_min":3294363,"no_reembolsable":8389,"reembolsable":2853192,"renta":2850906}
+{"n":1000,"hash":"a5328de1e4aaf1dfa44cefe3d68c0160bd68431c5183932c02f09d4cfe57a875","estado":"SUCCESS","ledger":5698603,"sim_tarifa_recursos":4447261,"sim_min":4447261,"no_reembolsable":10311,"reembolsable":3854040,"renta":3850778}

@@ -1,0 +1,17 @@
+   Compiling protocol v2.0.0 (/home/sergio/Documentos/SMM/VeritaXProtocol/sas-lab/resultados/02-almacenamiento-ttl/attestprotocol-rama/contracts/stellar/protocol)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.63s
+     Running tests/lab_struct.rs (/home/sergio/.cache/sas-lab/t02/rama/debug/deps/lab_struct-7208ec9a52bab87b)
+
+running 1 test
+Writing test snapshot file for test "string_json_vs_struct_tipado" to "test_snapshots/string_json_vs_struct_tipado.1.json".
+STRUCT json_compacto bytes_dato=110 write_bytes=212 instr=21628
+Writing test snapshot file for test "string_json_vs_struct_tipado" to "test_snapshots/string_json_vs_struct_tipado.2.json".
+STRUCT json_nombres_largos bytes_dato=130 write_bytes=232 instr=21634
+Writing test snapshot file for test "string_json_vs_struct_tipado" to "test_snapshots/string_json_vs_struct_tipado.3.json".
+STRUCT struct_con_campos bytes_dato=50 write_bytes=236 instr=26531
+Writing test snapshot file for test "string_json_vs_struct_tipado" to "test_snapshots/string_json_vs_struct_tipado.4.json".
+STRUCT struct_tupla bytes_dato=50 write_bytes=176 instr=24143
+test string_json_vs_struct_tipado ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

@@ -1,0 +1,4 @@
+{"ledger":5698626,"protocolo":30,"fecha":"2026-11-12T20:52:55.472Z"}
+{"n":16050,"hash":"5f5a52939f30e6e060346380bd9790400ecebdb948b1077b1b164e3d64667bf9","estado":"FAILED","msg":"{\"fee_charged\":\"82776\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}
+{"n":16100,"hash":"a3c167453c7d285d9696f08cb6f05704a09ed85718c0fb6cd4d17af7551f2ac1","estado":"FAILED","msg":"{\"fee_charged\":\"83006\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}
+{"n":16150,"hash":"a96d4162d66be5dc08827b1f579cf98c25c41ee901b7ff52f9f8da47f2e66270","estado":"FAILED","msg":"{\"fee_charged\":\"83257\",\"result\":{\"tx_failed\":[{\"op_inner\":{\"invoke_host_function\":\"resource_limit_exceeded\"}}]},\"ext\":\"v0\"}"}

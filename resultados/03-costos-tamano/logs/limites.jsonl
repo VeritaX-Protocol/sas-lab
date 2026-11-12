@@ -1,0 +1,14 @@
+{"ledger":5698591,"protocolo":30,"fecha":"2026-11-12T20:50:02.550Z"}
+{"n":2000,"bytes_valor":2000,"cpu":1054621,"leidos_B":0,"escritos_B":2688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":7329843,"minResourceFee":7329843}
+{"n":4000,"bytes_valor":4000,"cpu":1193965,"leidos_B":0,"escritos_B":4688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":13095207,"minResourceFee":13095207}
+{"n":8000,"bytes_valor":8000,"cpu":1479559,"leidos_B":0,"escritos_B":8688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":24625934,"minResourceFee":24625934}
+{"n":16000,"bytes_valor":16000,"cpu":2059230,"leidos_B":0,"escritos_B":16688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":47687395,"minResourceFee":47687395}
+{"n":32000,"bytes_valor":32000,"cpu":3218570,"leidos_B":0,"escritos_B":32688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":93810318,"minResourceFee":93810318}
+{"n":48000,"bytes_valor":48000,"cpu":4377910,"leidos_B":0,"escritos_B":48688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":139933239,"minResourceFee":139933239}
+{"n":60000,"bytes_valor":60000,"cpu":5247413,"leidos_B":0,"escritos_B":60688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":174525432,"minResourceFee":174525432}
+{"n":65000,"bytes_valor":65000,"cpu":5609709,"leidos_B":0,"escritos_B":65688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":188938844,"minResourceFee":188938844}
+{"n":65400,"bytes_valor":65400,"cpu":5638691,"leidos_B":0,"escritos_B":66088,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":190091918,"minResourceFee":190091918}
+{"n":65536,"bytes_valor":65536,"cpu":5648546,"leidos_B":0,"escritos_B":66224,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":190483965,"minResourceFee":190483965}
+{"n":70000,"bytes_valor":70000,"cpu":5972001,"leidos_B":0,"escritos_B":70688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":203352257,"minResourceFee":203352257}
+{"n":100000,"bytes_valor":100000,"cpu":8145763,"leidos_B":0,"escritos_B":100688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":289832735,"minResourceFee":289832735}
+{"n":130000,"bytes_valor":130000,"cpu":10319525,"leidos_B":0,"escritos_B":130688,"entradas_leer":2,"entradas_escribir":2,"tarifa_recursos":376313215,"minResourceFee":376313215}
