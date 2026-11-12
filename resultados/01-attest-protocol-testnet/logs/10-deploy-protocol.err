@@ -1,0 +1,11 @@
+ℹ️  Uploading contract WASM…
+ℹ️  Skipping install because wasm already installed
+ℹ️  Deploying contract using wasm hash a3b2dfce05d3840f7f872766b8426035c08c769e1d5496a64b556b5eff97fc5a
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: 770a2867ce6ede9704938a803c31191546fe76e4869a7ee992ee5f88f39358b2
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/770a2867ce6ede9704938a803c31191546fe76e4869a7ee992ee5f88f39358b2
+🔗 https://lab.stellar.org/r/testnet/contract/CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+✅ Deployed!
+⚠️  Overwriting existing alias 'sas01_protocol' that currently links to contract ID: CB7ROIUUBCHMZK2MST2C7RMTXHBJZSQOEPHSYKEDBSS64RUMTPU5ZHLZ

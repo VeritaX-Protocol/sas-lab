@@ -1,0 +1,6 @@
+❌ error: transaction simulation failed: HostError: Error(Contract, #23)
+
+Event log (newest first):
+   0: [Diagnostic Event] contract:CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO, topics:[error, Error(Contract, #23)], data:"escalating Ok(ScErrorType::Contract) frame-exit to Err"
+   1: [Diagnostic Event] topics:[fn_call, CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO, attest], data:[GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI, Bytes(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2), "{"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}", 1700000000]
+

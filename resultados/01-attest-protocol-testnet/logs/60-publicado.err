@@ -1,0 +1,6 @@
+❌ error: transaction simulation failed: HostError: Error(Contract, #3)
+
+Event log (newest first):
+   0: [Diagnostic Event] contract:CA2QET2KOUGAECEVYQEQT3SLDDZRUMAQHI7MMDTFVJY62WTHUTERAUCD, topics:[error, Error(Contract, #3)], data:"escalating Ok(ScErrorType::Contract) frame-exit to Err"
+   1: [Diagnostic Event] topics:[fn_call, CA2QET2KOUGAECEVYQEQT3SLDDZRUMAQHI7MMDTFVJY62WTHUTERAUCD, get_schema], data:Bytes(0000000000000000000000000000000000000000000000000000000000000000)
+

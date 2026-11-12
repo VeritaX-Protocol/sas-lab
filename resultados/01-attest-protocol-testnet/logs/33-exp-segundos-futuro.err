@@ -1,0 +1,6 @@
+ℹ️  Simulating transaction…
+ℹ️  Signing transaction: ad29ce6c4426fd8b21538c959b9dc1edf1e97f1f322fc75a242a357d34895b1a
+🌎 Sending transaction…
+✅ Transaction submitted successfully!
+🔗 https://stellar.expert/explorer/testnet/tx/ad29ce6c4426fd8b21538c959b9dc1edf1e97f1f322fc75a242a357d34895b1a
+📅 CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO - Success - Event: [{"symbol":"ATTEST"},{"symbol":"CREATE"}] = {"vec":[{"bytes":"9ceea715b816e201269fd1f4b51864c2073ef840a3cd987936da4cba3a916dbb"},{"bytes":"06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2"},{"address":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"},{"address":"GCWRIINQVVBD2OMMAIGLL64Z5IZ4DVWGQFINJZ7OUFW4EPLVASR7S4LI"},{"string":"{\"tipo\":\"asistencia\",\"curso\":\"Demo\",\"sal_hash\":\"e3b0c44298fc1c149afbf4c8996fb924\"}"},{"u64":"1"},{"u64":"1794430083"}]}

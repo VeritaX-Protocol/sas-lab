@@ -1,0 +1,2 @@
+a3b2dfce05d3840f7f872766b8426035c08c769e1d5496a64b556b5eff97fc5a  wasm/protocol.wasm
+33da5f8a0f6bf351e19fa2f20a5953c5db96659f2dabf4131b4f868a3ceefd24  wasm/resolvers-default.wasm

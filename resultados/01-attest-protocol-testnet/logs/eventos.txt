@@ -1,0 +1,96 @@
+Event 0024400886029676544-0000000000 [CONTRACT]:
+  Ledger:   5681274 (closed at 2026-11-11T20:46:53Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(CONTRACT)))
+            Symbol(ScSymbol(StringM(INIT)))
+  Value:    Vec(Some(ScVec(VecM([Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(9c09c0da9707eb3bac85f6e95e53394a472e88fccb3b1529832f1745bdede185)))))]))))
+
+Event 0024400894619607040-0000000000 [CONTRACT]:
+  Ledger:   5681276 (closed at 2026-11-11T20:47:03Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(SCHEMA)))
+            Symbol(ScSymbol(StringM(REGISTER)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Map(Some(ScMap(VecM([ScMapEntry { key: Symbol(ScSymbol(StringM(authority))), val: Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(definition))), val: String(ScString(StringM(curso:string,asistio:bool))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(resolver))), val: Void }, ScMapEntry { key: Symbol(ScSymbol(StringM(revocable))), val: Bool(true) }]))))]))))
+
+Event 0024400903209549824-0000000000 [CONTRACT]:
+  Ledger:   5681278 (closed at 2026-11-11T20:47:13Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(SCHEMA)))
+            Symbol(ScSymbol(StringM(REGISTER)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(4b3dcabec3d2877af6eccdad6c6ac1b1c6f7b25a7f2b25b6decff69eb8b9d001))), Map(Some(ScMap(VecM([ScMapEntry { key: Symbol(ScSymbol(StringM(authority))), val: Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(definition))), val: String(ScString(StringM(struct Cert { string curso; bool asistio; }))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(resolver))), val: Void }, ScMapEntry { key: Symbol(ScSymbol(StringM(revocable))), val: Bool(true) }]))))]))))
+
+Event 0024400911799488512-0000000000 [CONTRACT]:
+  Ledger:   5681280 (closed at 2026-11-11T20:47:23Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(SCHEMA)))
+            Symbol(ScSymbol(StringM(REGISTER)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(b191702e92203835a0bd725f27cb322135950e6a3d4350a94a3cdf0679602643))), Map(Some(ScMap(VecM([ScMapEntry { key: Symbol(ScSymbol(StringM(authority))), val: Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(definition))), val: String(ScString(StringM(string curso, bool asistio))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(resolver))), val: Void }, ScMapEntry { key: Symbol(ScSymbol(StringM(revocable))), val: Bool(true) }]))))]))))
+
+Event 0024400920389431296-0000000000 [CONTRACT]:
+  Ledger:   5681282 (closed at 2026-11-11T20:47:33Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(SCHEMA)))
+            Symbol(ScSymbol(StringM(REGISTER)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(e5efa808afae73d9039c234dcde60c17e156e90035f6fcf7b33d4892b85cea3c))), Map(Some(ScMap(VecM([ScMapEntry { key: Symbol(ScSymbol(StringM(authority))), val: Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(definition))), val: String(ScString(StringM(curso:string,asistio:bool,r:default))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(resolver))), val: Address(Contract(ContractId(Hash(c04c5068b7391e56d7e5535456d74a7edaedd1f0143da1d5726ce9387c108782)))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(revocable))), val: Bool(true) }]))))]))))
+
+Event 0024400928979439616-0000000000 [CONTRACT]:
+  Ledger:   5681284 (closed at 2026-11-11T20:47:43Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(SCHEMA)))
+            Symbol(ScSymbol(StringM(REGISTER)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(f528fef163b45c05bac40673eb5512246277b0d53bb1f408dcaae868f73ca351))), Map(Some(ScMap(VecM([ScMapEntry { key: Symbol(ScSymbol(StringM(authority))), val: Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(definition))), val: String(ScString(StringM(curso:string,norev:bool))) }, ScMapEntry { key: Symbol(ScSymbol(StringM(resolver))), val: Void }, ScMapEntry { key: Symbol(ScSymbol(StringM(revocable))), val: Bool(false) }]))))]))))
+
+Event 0024400937569304576-0000000000 [CONTRACT]:
+  Ledger:   5681286 (closed at 2026-11-11T20:47:53Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(CREATE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(7269af0c087d6078ed42b5cae2b7bd6b07fc1a55316f8e71099198aadd2f0e1b))), Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), String(ScString(StringM({"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}))), U64(0), U64(1794430073)]))))
+
+Event 0024400946159222784-0000000000 [CONTRACT]:
+  Ledger:   5681288 (closed at 2026-11-11T20:48:03Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(CREATE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(9ceea715b816e201269fd1f4b51864c2073ef840a3cd987936da4cba3a916dbb))), Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), String(ScString(StringM({"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}))), U64(1), U64(1794430083)]))))
+
+Event 0024400954749210624-0000000000 [CONTRACT]:
+  Ledger:   5681290 (closed at 2026-11-11T20:48:13Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(CREATE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(dab5afd2e5490b7690ef89075cae29338dfb7891d5c57f6725e609b11a6619da))), Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), String(ScString(StringM({"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}))), U64(2), U64(1794430093)]))))
+
+Event 0024400963339083776-0000000000 [CONTRACT]:
+  Ledger:   5681292 (closed at 2026-11-11T20:48:23Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(CREATE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(ead448b66d0501f0041476aeab1da13a66a408b52bc4a850ba736248ccf8a298))), Bytes(ScBytes(BytesM(f528fef163b45c05bac40673eb5512246277b0d53bb1f408dcaae868f73ca351))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), String(ScString(StringM({"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}))), U64(3), U64(1794430103)]))))
+
+Event 0024400971929026560-0000000000 [CONTRACT]:
+  Ledger:   5681294 (closed at 2026-11-11T20:48:33Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(CREATE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(f64540a21e4244f747a5ac1cee2ff06e4e848d59b5f3eed3e75f5a6bd13d7f8d))), Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ec651bc78d8944b865fef707eee578b969409cd69b9f90e992218ae13283d9ab))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ec651bc78d8944b865fef707eee578b969409cd69b9f90e992218ae13283d9ab))))), String(ScString(StringM({"tipo":"asistencia","curso":"Demo","sal_hash":"e3b0c44298fc1c149afbf4c8996fb924"}))), U64(0), U64(1794430113)]))))
+
+Event 0024400984813944832-0000000000 [CONTRACT]:
+  Ledger:   5681297 (closed at 2026-11-11T20:48:48Z)
+  Contract: CBVXDFQGP7EO7ZQOXAOWFNMFB5DALX7Y5OGGGWVBVQ6ZUBSCD5GNRASO
+  Topics:
+            Symbol(ScSymbol(StringM(ATTEST)))
+            Symbol(ScSymbol(StringM(REVOKE)))
+  Value:    Vec(Some(ScVec(VecM([Bytes(ScBytes(BytesM(7269af0c087d6078ed42b5cae2b7bd6b07fc1a55316f8e71099198aadd2f0e1b))), Bytes(ScBytes(BytesM(06c0f98170415fd62552b20476d1fa2b8c6836011354d5d9d6315e052dfad8b2))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Address(Account(AccountId(PublicKeyTypeEd25519(Uint256(ad1421b0ad423d398c020cb5fb99ea33c1d6c68150d4e7eea16dc23d7504a3f9))))), Bool(true), U64(1794430128)]))))
+
